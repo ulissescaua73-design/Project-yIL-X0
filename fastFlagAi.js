@@ -16,17 +16,15 @@ async function gerarFastFlagGroq(userPrompt) {
 O teu único objetivo é retornar um objeto JSON plano (flat JSON) contendo FFlags reais e válidas do Roblox com base no pedido do utilizador.
 
 REGRAS ESTRITAS:
-1. Retorna APENAS um objeto JSON válido, sem markdown extra (sem \`\`\`json), sem conversas, sem introduções.
+1. Retorna APENAS o objeto JSON puro contendo as FFlags.
 2. Cada chave DEVE começar com os prefixos corretos do Roblox (como FFlag, DFInt, DFFlag, FString).
-3. Os valores devem ser diretamente os valores (booleanos, números ou strings), NUNCA cutes estruturas aninhadas com "Value" ou "Type".
-4. Usa nomes de flags reais e conhecidas da comunidade do Roblox/Bloxstrap.
+3. Os valores devem ser diretamente os valores (booleanos, números ou strings), NUNCA cries estruturas aninhadas com "Value" ou "Type".
 
-Exemplo de formato correto:
+Exemplo correto:
 {
   "FFlagTaskSchedulerLimitTargetFps": true,
   "DFIntTaskSchedulerTargetFps": 240,
-  "FFlagDebugGraphicsDisableDirectX11": false,
-  "FFlagHandleAltEnter": true
+  "FFlagDebugGraphicsDisableDirectX11": false
 }`
                 },
                 {
@@ -40,10 +38,13 @@ Exemplo de formato correto:
 
         let resposta = completion.choices[0].message.content.trim();
 
-        // Limpa qualquer bloco de markdown residual caso a IA teime em colocar
-        resposta = resposta.replace(/^```json\s*/i, '');
-        resposta = resposta.replace(/^```\s*/i, '');
-        resposta = resposta.replace(/\s*```$/, '');
+        // Encontra o bloco JSON real dentro da resposta (desde a primeira '{' até à última '}')
+        const inicioJson = resposta.indexOf('{');
+        const fimJson = resposta.lastIndexOf('}');
+
+        if (inicioJson !== -1 && fimJson !== -1 && fimJson > inicioJson) {
+            resposta = resposta.substring(inicioJson, fimJson + 1);
+        }
 
         return resposta.trim();
     } catch (error) {
