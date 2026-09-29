@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, ActionRowBuilder, StringSelectMenuBuilder, EmbedBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
+const { Client, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -29,67 +29,91 @@ const ID_CANAL_EXECUTOR = '1554591514099851375';
 client.once('ready', async () => {
     console.log(`Bot online e com muita aura! Logado como ${client.user.tag}`);
 
-    // 1. Enviar painel de FastFlags
+    // 1. Enviar painel de FastFlags (com Botão)
     try {
         const canalFflag = await client.channels.fetch(ID_CANAL_FFLAG);
         if (canalFflag) {
             const embedFflag = new EmbedBuilder()
                 .setColor('#00ffcc')
                 .setTitle('⚡ GERADOR DE FASTFLAGS // IA')
-                .setDescription('Clica no menu abaixo para pedir as tuas FastFlags personalizadas geradas por inteligência artificial (Groq).');
+                .setDescription('Clica no botão abaixo para pedir as tuas FastFlags personalizadas geradas por inteligência artificial (Groq).');
 
-            const rowFflag = new ActionRowBuilder()
-                .addComponents(
-                    new StringSelectMenuBuilder()
-                        .setCustomId('painel_fflag_menu')
-                        .setPlaceholder('⚙️ Clica aqui para configurar as tuas Fflags...')
-                        .addOptions([
-                            {
-                                label: 'Gerar Fflag Personalizada',
-                                description: 'Escreve o teu objetivo e a IA gera o JSON otimizado.',
-                                value: 'fflag_opcao',
-                                emoji: '⚡'
-                            }
-                        ])
-                );
+            const botaoFflag = new ButtonBuilder()
+                .setCustomId('btn_gerar_fflag')
+                .setLabel('Gerar Fflag')
+                .setStyle(ButtonStyle.Primary) // Botão azul maneiro
+                .setEmoji('⚡');
+
+            const rowFflag = new ActionRowBuilder().addComponents(botaoFflag);
 
             await canalFflag.send({ embeds: [embedFflag], components: [rowFflag] });
-            console.log('Painel de FastFlags enviado com sucesso!');
+            console.log('Painel de FastFlags (Botão) enviado com sucesso!');
         }
     } catch (err) {
         console.error('Erro ao enviar painel de Fflags:', err);
     }
 
-    // 2. Enviar painel de Executores
+    // 2. Enviar painel de Executores (com Botões Separados)
     try {
         const canalExecutor = await client.channels.fetch(ID_CANAL_EXECUTOR);
         if (canalExecutor) {
             const embedExecutor = new EmbedBuilder()
                 .setColor('#2b2d31')
                 .setTitle('🚀 EXECUTORES E FERRAMENTAS // yIL')
-                .setDescription('Seleciona abaixo para descarregar os executores e ferramentas de forma segura.');
+                .setDescription('Clica no botão correspondente abaixo para descarregar o software pretendido de forma segura.');
 
-            const rowExecutor = new ActionRowBuilder()
-                .addComponents(
-                    new StringSelectMenuBuilder()
-                        .setCustomId('painel_executor_menu')
-                        .setPlaceholder('📥 Seleciona o menu de downloads...')
-                        .addOptions([
-                            {
-                                label: 'Baixar Executores',
-                                description: 'Abre o menu de downloads dos programas.',
-                                value: 'executor_opcao',
-                                emoji: '🚀'
-                            }
-                        ])
-                );
+            // Botão para o FFM Installer
+            const botaoFFM = new ButtonBuilder()
+                .setCustomId('btn_baixar_ffm')
+                .setLabel('Baixar FFM Installer')
+                .setStyle(ButtonStyle.Success)
+                .setEmoji('📥');
+
+            // Botão para o Velostrap
+            const botaoVelostrap = new ButtonBuilder()
+                .setCustomId('btn_baixar_velostrap')
+                .setLabel('Baixar Velostrap')
+                .setStyle(ButtonStyle.Primary)
+                .setEmoji('📥');
+
+            // Agrupa os dois botões na mesma linha
+            const rowExecutor = new ActionRowBuilder().addComponents(botaoFFM, botaoVelostrap);
 
             await canalExecutor.send({ embeds: [embedExecutor], components: [rowExecutor] });
-            console.log('Painel de Executores enviado com sucesso!');
+            console.log('Painel de Executores (Botões separados) enviado com sucesso!');
         }
     } catch (err) {
         console.error('Erro ao enviar painel de executores:', err);
     }
+    // Botão do FFM Installer
+        if (interaction.customId === 'btn_baixar_ffm') {
+            await interaction.deferReply({ ephemeral: true });
+            try {
+                await interaction.followUp({
+                    content: '📥 Aqui está o teu **FFM Installer**:',
+                    files: ['./FFM_Installer.exe'],
+                    ephemeral: true
+                });
+            } catch (err) {
+                console.error('Erro ao enviar FFM Installer:', err);
+                await interaction.followUp({ content: '❌ Erro ao enviar o ficheiro.', ephemeral: true });
+            }
+        }
+
+        // Botão do Velostrap
+        if (interaction.customId === 'btn_baixar_velostrap') {
+            await interaction.deferReply({ ephemeral: true });
+            try {
+                await interaction.followUp({
+                    content: '📥 Aqui está o teu **Velostrap**:',
+                    files: ['./Velostrap (1) (1).exe'],
+                    ephemeral: true
+                });
+            } catch (err) {
+                console.error('Erro ao enviar Velostrap:', err);
+                await interaction.followUp({ content: '❌ Erro ao enviar o ficheiro.', ephemeral: true });
+            }
+        }
 });
 
 // Evento de Interações
