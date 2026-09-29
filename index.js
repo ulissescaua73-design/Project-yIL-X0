@@ -28,6 +28,68 @@ const ID_CANAL_EXECUTOR = '1554591514099851375';
 
 client.once('ready', async () => {
     console.log(`Bot online e com muita aura! Logado como ${client.user.tag}`);
+
+    // 1. Enviar painel de FastFlags
+    try {
+        const canalFflag = await client.channels.fetch(ID_CANAL_FFLAG);
+        if (canalFflag) {
+            const embedFflag = new EmbedBuilder()
+                .setColor('#00ffcc')
+                .setTitle('⚡ GERADOR DE FASTFLAGS // IA')
+                .setDescription('Clica no menu abaixo para pedir as tuas FastFlags personalizadas geradas por inteligência artificial (Groq).');
+
+            const rowFflag = new ActionRowBuilder()
+                .addComponents(
+                    new StringSelectMenuBuilder()
+                        .setCustomId('painel_fflag_menu')
+                        .setPlaceholder('⚙️ Clica aqui para configurar as tuas Fflags...')
+                        .addOptions([
+                            {
+                                label: 'Gerar Fflag Personalizada',
+                                description: 'Escreve o teu objetivo e a IA gera o JSON otimizado.',
+                                value: 'fflag_opcao',
+                                emoji: '⚡'
+                            }
+                        ])
+                );
+
+            await canalFflag.send({ embeds: [embedFflag], components: [rowFflag] });
+            console.log('Painel de FastFlags enviado com sucesso!');
+        }
+    } catch (err) {
+        console.error('Erro ao enviar painel de Fflags:', err);
+    }
+
+    // 2. Enviar painel de Executores
+    try {
+        const canalExecutor = await client.channels.fetch(ID_CANAL_EXECUTOR);
+        if (canalExecutor) {
+            const embedExecutor = new EmbedBuilder()
+                .setColor('#2b2d31')
+                .setTitle('🚀 EXECUTORES E FERRAMENTAS // yIL')
+                .setDescription('Seleciona abaixo para descarregar os executores e ferramentas de forma segura.');
+
+            const rowExecutor = new ActionRowBuilder()
+                .addComponents(
+                    new StringSelectMenuBuilder()
+                        .setCustomId('painel_executor_menu')
+                        .setPlaceholder('📥 Seleciona o menu de downloads...')
+                        .addOptions([
+                            {
+                                label: 'Baixar Executores',
+                                description: 'Abre o menu de downloads dos programas.',
+                                value: 'executor_opcao',
+                                emoji: '🚀'
+                            }
+                        ])
+                );
+
+            await canalExecutor.send({ embeds: [embedExecutor], components: [rowExecutor] });
+            console.log('Painel de Executores enviado com sucesso!');
+        }
+    } catch (err) {
+        console.error('Erro ao enviar painel de executores:', err);
+    }
 });
 
 // Evento de Interações
