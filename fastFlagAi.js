@@ -1,7 +1,6 @@
 const OpenAI = require('openai');
 
 async function gerarFastFlagGroq(userPrompt) {
-    // Instancia o cliente dentro da função para garantir que lê a variável de ambiente atualizada
     const groq = new OpenAI({
         apiKey: process.env.GROQ_API_KEY,
         baseURL: 'https://api.groq.com/openai/v1'
@@ -9,7 +8,7 @@ async function gerarFastFlagGroq(userPrompt) {
 
     try {
         const completion = await groq.chat.completions.create({
-            model: "llama-3.3-70b-versatile",
+            model: "llama3-70b-8192", // Modelo atualizado e ativo na Groq
             messages: [
                 {
                     role: "system",
