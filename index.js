@@ -41,7 +41,7 @@ client.once('ready', async () => {
             const botaoFflag = new ButtonBuilder()
                 .setCustomId('btn_gerar_fflag')
                 .setLabel('Gerar Fflag')
-                .setStyle(ButtonStyle.Primary) // Botão azul maneiro
+                .setStyle(ButtonStyle.Primary)
                 .setEmoji('⚡');
 
             const rowFflag = new ActionRowBuilder().addComponents(botaoFflag);
@@ -85,7 +85,34 @@ client.once('ready', async () => {
     } catch (err) {
         console.error('Erro ao enviar painel de executores:', err);
     }
-    // Botão do FFM Installer
+});
+
+// Evento de Interações (Botões, Menus e Modais)
+client.on('interactionCreate', async interaction => {
+    
+    // 1. Cliques em Botões
+    if (interaction.isButton()) {
+        
+        // Botão para abrir o Modal de FastFlags
+        if (interaction.customId === 'btn_gerar_fflag') {
+            const modal = new ModalBuilder()
+                .setCustomId('modal_fastflag')
+                .setTitle('Configurador de FastFlags (Groq IA)');
+
+            const input = new TextInputBuilder()
+                .setCustomId('prompt_ff')
+                .setLabel('O que pretendes otimizar no Roblox?')
+                .setStyle(TextInputStyle.Paragraph)
+                .setPlaceholder('Ex: Quero o máximo de FPS possível, remover texturas pesadas e manter o ping estável.')
+                .setRequired(true);
+
+            const row = new ActionRowBuilder().addComponents(input);
+            modal.addComponents(row);
+
+            await interaction.showModal(modal);
+        }
+
+        // Botão do FFM Installer
         if (interaction.customId === 'btn_baixar_ffm') {
             await interaction.deferReply({ ephemeral: true });
             try {
@@ -114,38 +141,10 @@ client.once('ready', async () => {
                 await interaction.followUp({ content: '❌ Erro ao enviar o ficheiro.', ephemeral: true });
             }
         }
-});
+    }
 
-// Evento de Interações
-client.on('interactionCreate', async interaction => {
-    
-    // 1. Menus de Seleção
+    // 2. Menus de Seleção (caso ainda uses algum)
     if (interaction.isStringSelectMenu()) {
-        
-        // Menu de FastFlags
-        if (interaction.customId === 'painel_fflag_menu') {
-            const escolha = interaction.values[0];
-
-            if (escolha === 'fflag_opcao') {
-                const modal = new ModalBuilder()
-                    .setCustomId('modal_fastflag')
-                    .setTitle('Configurador de FastFlags (Groq IA)');
-
-                const input = new TextInputBuilder()
-                    .setCustomId('prompt_ff')
-                    .setLabel('O que pretendes otimizar no Roblox?')
-                    .setStyle(TextInputStyle.Paragraph)
-                    .setPlaceholder('Ex: Quero o máximo de FPS possível, remover texturas pesadas e manter o ping estável.')
-                    .setRequired(true);
-
-                const row = new ActionRowBuilder().addComponents(input);
-                modal.addComponents(row);
-
-                await interaction.showModal(modal);
-            }
-        }
-
-        // Menu de Executores
         if (interaction.customId === 'painel_executor_menu') {
             const escolha = interaction.values[0];
 
@@ -169,7 +168,7 @@ client.on('interactionCreate', async interaction => {
         }
     }
 
-    // 2. Submissão do Modal das FastFlags
+    // 3. Submissão do Modal das FastFlags
     if (interaction.isModalSubmit() && interaction.customId === 'modal_fastflag') {
         await interaction.deferReply({ ephemeral: true });
 
