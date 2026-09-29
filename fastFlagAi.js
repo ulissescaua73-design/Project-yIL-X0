@@ -1,12 +1,11 @@
-import OpenAI from 'openai';
+const OpenAI = require('openai');
 
-// Inicializa o cliente da Groq (usando a estrutura compatível com OpenAI)
 const groq = new OpenAI({
     apiKey: process.env.GROQ_API_KEY,
     baseURL: 'https://api.groq.com/openai/v1'
 });
 
-export async function gerarFastFlagGroq(userPrompt) {
+async function gerarFastFlagGroq(userPrompt) {
     try {
         const completion = await groq.chat.completions.create({
             model: "llama-3.3-70b-versatile",
@@ -20,7 +19,7 @@ export async function gerarFastFlagGroq(userPrompt) {
                     content: userPrompt
                 }
             ],
-            temperature: 0.2, // Baixa aleatoriedade para garantir estabilidade no JSON
+            temperature: 0.2,
             max_tokens: 1024
         });
 
@@ -30,3 +29,5 @@ export async function gerarFastFlagGroq(userPrompt) {
         throw new Error("O sistema de otimização está indisponível de momento.");
     }
 }
+
+module.exports = { gerarFastFlagGroq };
