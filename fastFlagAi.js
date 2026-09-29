@@ -1,44 +1,27 @@
-const OpenAI = require('openai');
+const { GoogleGenAI } = require('@google/genai');
+
+// Usa a mesma inicialização que já tens no teu bot
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function gerarFastFlagGroq(userPrompt) {
-    const groq = new OpenAI({
-        apiKey: process.env.GROQ_API_KEY,
-        baseURL: 'https://api.groq.com/openai/v1'
-    });
-
     try {
-        const completion = await groq.chat.completions.create({
-            model: "openai/gpt-oss-20b",
-            messages: [
-                {
-                    role: "system",
-                    content: `És um engenheiro reverso sénior do Roblox especialista em FastFlags (FFlags) para o Bloxstrap. 
-O teu único objetivo é retornar um objeto JSON plano (flat JSON) contendo FFlags reais e válidas do Roblox com base no pedido do utilizador.
-
-REGRAS ESTRITAS:
-1. Retorna APENAS o objeto JSON puro contendo as FFlags.
-2. Cada chave DEVE começar com os prefixos corretos do Roblox (como FFlag, DFInt, DFFlag, FString).
-3. Os valores devem ser diretamente os valores (booleanos, números ou strings), NUNCA cries estruturas aninhadas com "Value" ou "Type".
-
-Exemplo correto:
-{
-  "FFlagTaskSchedulerLimitTargetFps": true,
-  "DFIntTaskSchedulerTargetFps": 240,
-  "FFlagDebugGraphicsDisableDirectX11": false
-}`
-                },
-                {
-                    role: "user",
-                    content: userPrompt
-                }
-            ],
-            temperature: 0.2,
-            max_tokens: 1500
+        const response = await ai.models.generateContent({
+            model: 'gemini-3.8-flash', // Mantém o modelo que já usas no bot
+            contents: `Gera um objeto JSON plano contendo FFlags reais, válidas e avançadas do Roblox (como FFlag..., DFInt..., etc.) para o Bloxstrap, com base no seguinte pedido do utilizador: "${userPrompt}". 
+            
+REGRAS:
+1. Devolve APENAS o JSON válido. 
+2. Nao uses estruturas aninhadas com "Value" ou "Type". Usa formato chave-valor direto.
+3. Exemplo: {"FFlagTaskSchedulerLimitTargetFps": true, "DFIntTaskSchedulerTargetFps": 240}`,
+            config: {
+                responseMimeType: 'application/json',
+                temperature: 0.2
+            }
         });
 
-        let resposta = completion.choices[0].message.content.trim();
+        let resposta = response.text ? response.text.trim() : '';
 
-        // Encontra o bloco JSON real dentro da resposta (desde a primeira '{' até à última '}')
+        // Limpeza de segurança para isolar o JSON
         const inicioJson = resposta.indexOf('{');
         const fimJson = resposta.lastIndexOf('}');
 
@@ -48,7 +31,7 @@ Exemplo correto:
 
         return resposta.trim();
     } catch (error) {
-        console.error("Erro ao comunicar com a Groq API:", error);
+        console.error("Erro ao comunicar com a API do Gemini:", error);
         throw new Error("O sistema de otimização está indisponível de momento.");
     }
 }
