@@ -1,11 +1,12 @@
 const OpenAI = require('openai');
 
-const groq = new OpenAI({
-    apiKey: process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY,
-    baseURL: 'https://api.groq.com/openai/v1'
-});
-
 async function gerarFastFlagGroq(userPrompt) {
+    // Instancia o cliente dentro da função para garantir que lê a variável de ambiente atualizada
+    const groq = new OpenAI({
+        apiKey: process.env.GROQ_API_KEY,
+        baseURL: 'https://api.groq.com/openai/v1'
+    });
+
     try {
         const completion = await groq.chat.completions.create({
             model: "llama-3.3-70b-versatile",
