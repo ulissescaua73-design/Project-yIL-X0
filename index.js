@@ -233,6 +233,96 @@ client.on('messageCreate', async message => {
     }
 });
 
+const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, EmbedBuilder } = require('discord.js');
+
+// 1. Registo do comando /anunciar (podes meter isto na parte onde registas os slash commands do bot)
+// Se já tiveres um gestor de comandos de barra, basta adicionar a estrutura dele lá:
+const commandAnunciar = new SlashCommandBuilder()
+    .setName('anunciar')
+    .addChannelOption(option => 
+        option.setName('canal')
+            .setDescription('Canal onde o anúncio vai ser enviado')
+            .setRequired(true)
+    );
+
+// 2. Evento que abre a janelinha (Modal) quando dás o comando /anunciar
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isChatInputCommand()) return;
+
+    if (interaction.commandName === 'anunciar') {
+        if (!interaction.member.permissions.has('ManageMessages')) {
+            return interaction.reply({ content: '❌ Mano, tu não tem moral (permissão) pra usar esse comando!', ephemeral: true });
+        }
+
+        const canalDestino = interaction.options.getChannel('canal');
+
+        // Cria o modal (janela de formulário)
+        const modal = new ModalBuilder()
+            .setCustomId(`modal_anuncio_${canalDestino.id}`)
+            .setTitle('Painel de Anúncios - Cria');
+
+        // Caixas de texto do modal
+        const tituloInput = new TextInputBuilder()
+            .setCustomId('anuncio_titulo')
+            .setLabel('Título do Anúncio (opcional)')
+            .setPlaceholder('Ex: ATENÇÃO FAMÍLIA! 🚨')
+            .setStyle(TextInputStyle.Short)
+            .setRequired(false);
+
+        const mensagemInput = new TextInputBuilder()
+            .setCustomId('anuncio_mensagem')
+            .setLabel('Mensagem / Conteúdo principal')
+            .setPlaceholder('Escreve a fita completa do anúncio aqui...')
+            .setStyle(TextInputStyle.Paragraph)
+            .setRequired(true);
+
+        modal.addComponents(
+            new ActionRowBuilder().addComponents(tituloInput),
+            new ActionRowBuilder().addComponents(mensagemInput)
+        );
+
+        await interaction.showModal(modal);
+    }
+});
+
+// 3. Evento que processa o que escreveste no modal e envia para o canal escolhido
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isModalSubmit()) return;
+
+    if (interaction.customId.startsWith('modal_anuncio_')) {
+        const canalId = interaction.customId.split('_')[2];
+        const canalDestino = interaction.guild.channels.cache.get(canalId);
+
+        if (!canalDestino) {
+            return interaction.reply({ content: '❌ Deu ruim: O canal de destino não foi encontrado.', ephemeral: true });
+        }
+
+        const titulo = interaction.fields.getTextInputValue('anuncio_titulo');
+        const mensagem = interaction.fields.getTextInputValue('anuncio_mensagem');
+
+        try {
+            // Monta o Embed bonitão com a cara do servidor
+            const embedAnuncio = new EmbedBuilder()
+                .setDescription(mensagem)
+                .setColor(0x5865F2) // Cor padrão estilo Discord / customizável
+                .setTimestamp();
+
+            if (titulo) {
+                embedAnuncio.setTitle(titulo);
+            }
+
+            // Envia o anúncio no canal escolhido
+            await canalDestino.send({ embeds: [embedAnuncio] });
+
+            await interaction.reply({ content: `✅ Anúncio mandado com sucesso lá em ${canalDestino}, brabo!`, ephemeral: true });
+
+        } catch (error) {
+            console.error('Erro ao enviar anúncio do modal:', error);
+            interaction.reply({ content: '❌ Erro ao enviar o anúncio. Confere se eu tenho permissão de enviar mensagens naquele canal!', ephemeral: true });
+        }
+    }
+});
+
 client.login(process.env.DISCORD_TOKEN);
 
 const express = require('express');
