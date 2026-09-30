@@ -233,8 +233,6 @@ client.on('messageCreate', async message => {
     }
 });
 
-const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, EmbedBuilder } = require('discord.js');
-
 // 1. Registo do comando /anunciar (podes meter isto na parte onde registas os slash commands do bot)
 // Se já tiveres um gestor de comandos de barra, basta adicionar a estrutura dele lá:
 const commandAnunciar = new SlashCommandBuilder()
