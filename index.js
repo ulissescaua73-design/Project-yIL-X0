@@ -1,4 +1,23 @@
-const { Client, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
+const { 
+    Client, 
+    GatewayIntentBits, 
+    ActionRowBuilder, 
+    ButtonBuilder, 
+    ButtonStyle, 
+    EmbedBuilder, 
+    ModalBuilder, 
+    TextInputBuilder, 
+    TextInputStyle, 
+    SlashCommandBuilder, 
+    REST, 
+    Routes, 
+    StringSelectMenuBuilder, 
+    UserSelectMenuBuilder, 
+    RoleSelectMenuBuilder, 
+    ChannelSelectMenuBuilder, 
+    PermissionFlagsBits,
+    ChannelType
+} = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -233,17 +252,36 @@ client.on('messageCreate', async message => {
     }
 });
 
-// 1. Registo do comando /anunciar (podes meter isto na parte onde registas os slash commands do bot)
-// Se já tiveres um gestor de comandos de barra, basta adicionar a estrutura dele lá:
+// ==========================================
+// SISTEMA DE ANÚNCIOS VIA SLASH COMMAND E MODAL
+// ==========================================
+
+// 1. Definição do comando slash
 const commandAnunciar = new SlashCommandBuilder()
     .setName('anunciar')
+    .setDescription('Envia um anúncio profissional em embed através de um painel.')
     .addChannelOption(option => 
         option.setName('canal')
             .setDescription('Canal onde o anúncio vai ser enviado')
             .setRequired(true)
     );
 
-// 2. Evento que abre a janelinha (Modal) quando dás o comando /anunciar
+// 2. Registo automático do comando na API do Discord ao ligar (podes meter logo após o client.login ou no ready)
+client.once('ready', async () => {
+    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
+    try {
+        console.log('🔄 A registar comandos slash (/) na API do Discord...');
+        await rest.put(
+            Routes.applicationCommands(client.user.id),
+            { body: [commandAnunciar.toJSON()] },
+        );
+        console.log('✅ Comandos slash registados com sucesso, meu mano!');
+    } catch (error) {
+        console.error('Erro ao registar comandos slash:', error);
+    }
+});
+
+// 3. Evento que abre a janelinha (Modal) quando dás o comando /anunciar
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
@@ -254,12 +292,10 @@ client.on('interactionCreate', async interaction => {
 
         const canalDestino = interaction.options.getChannel('canal');
 
-        // Cria o modal (janela de formulário)
         const modal = new ModalBuilder()
             .setCustomId(`modal_anuncio_${canalDestino.id}`)
             .setTitle('Painel de Anúncios - Cria');
 
-        // Caixas de texto do modal
         const tituloInput = new TextInputBuilder()
             .setCustomId('anuncio_titulo')
             .setLabel('Título do Anúncio (opcional)')
@@ -283,7 +319,7 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-// 3. Evento que processa o que escreveste no modal e envia para o canal escolhido
+// 4. Evento que processa o que escreveste no modal e envia para o canal escolhido
 client.on('interactionCreate', async interaction => {
     if (!interaction.isModalSubmit()) return;
 
@@ -299,17 +335,15 @@ client.on('interactionCreate', async interaction => {
         const mensagem = interaction.fields.getTextInputValue('anuncio_mensagem');
 
         try {
-            // Monta o Embed bonitão com a cara do servidor
             const embedAnuncio = new EmbedBuilder()
                 .setDescription(mensagem)
-                .setColor(0x5865F2) // Cor padrão estilo Discord / customizável
+                .setColor(0x5865F2)
                 .setTimestamp();
 
             if (titulo) {
                 embedAnuncio.setTitle(titulo);
             }
 
-            // Envia o anúncio no canal escolhido
             await canalDestino.send({ embeds: [embedAnuncio] });
 
             await interaction.reply({ content: `✅ Anúncio mandado com sucesso lá em ${canalDestino}, brabo!`, ephemeral: true });
