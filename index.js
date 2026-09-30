@@ -36,7 +36,7 @@ client.once('ready', async () => {
             const embedFflag = new EmbedBuilder()
                 .setColor('#00ffcc')
                 .setTitle('⚡ GERADOR DE FASTFLAGS // IA')
-                .setDescription('Clica no botão abaixo para pedir as tuas FastFlags personalizadas geradas por inteligência artificial (Groq).');
+                .setDescription('Clique no botão abaixo escolher as suas FastFlags personalizadas.');
 
             const botaoFflag = new ButtonBuilder()
                 .setCustomId('btn_gerar_fflag')
@@ -60,7 +60,7 @@ client.once('ready', async () => {
             const embedExecutor = new EmbedBuilder()
                 .setColor('#2b2d31')
                 .setTitle('🚀 EXECUTORES E FERRAMENTAS // yIL')
-                .setDescription('Clica no botão correspondente abaixo para descarregar o software pretendido de forma segura.');
+                .setDescription('Clique no botão correspondente abaixo pra baixar o arquivo escolhido de forma segura.');
 
             // Botão para o FFM Installer
             const botaoFFM = new ButtonBuilder()
@@ -97,11 +97,11 @@ client.on('interactionCreate', async interaction => {
         if (interaction.customId === 'btn_gerar_fflag') {
             const modal = new ModalBuilder()
                 .setCustomId('modal_fastflag')
-                .setTitle('Configurador de FastFlags (Groq IA)');
+                .setTitle('Configurador de FastFlags');
 
             const input = new TextInputBuilder()
                 .setCustomId('prompt_ff')
-                .setLabel('O que pretendes otimizar no Roblox?')
+                .setLabel('O que pretende otimizar no Roblox?')
                 .setStyle(TextInputStyle.Paragraph)
                 .setPlaceholder('Ex: Quero o máximo de FPS possível, remover texturas pesadas e manter o ping estável.')
                 .setRequired(true);
@@ -117,7 +117,7 @@ client.on('interactionCreate', async interaction => {
             await interaction.deferReply({ ephemeral: true });
             try {
                 await interaction.followUp({
-                    content: '📥 Aqui está o teu **FFM Installer**:',
+                    content: '📥 Aqui está o seu **FFM Installer**:',
                     files: ['./FFM_Installer.exe'],
                     ephemeral: true
                 });
@@ -132,7 +132,7 @@ client.on('interactionCreate', async interaction => {
             await interaction.deferReply({ ephemeral: true });
             try {
                 await interaction.followUp({
-                    content: '📥 Aqui está o teu **Velostrap**:',
+                    content: '📥 Aqui está o seu **Velostrap**:',
                     files: ['./Velostrap (1) (1).exe'],
                     ephemeral: true
                 });
