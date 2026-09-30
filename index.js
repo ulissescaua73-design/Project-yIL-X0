@@ -188,6 +188,44 @@ client.on('interactionCreate', async interaction => {
         }
     }
 });
+client.on('messageCreate', async message => {
+    // Ignora mensagens de bots e mensagens que não começam com o comando !apagar
+    if (message.author.bot || !message.content.startsWith('!apagar')) return;
+
+    // Verifica se o membro tem permissão de gerir mensagens
+    if (!message.member.permissions.has('ManageMessages')) {
+        return message.reply('❌ Não tem moral o para usar esse comando, meu mano!');
+    }
+
+    // Separa os argumentos (ex: "!apagar 50" -> args[1] é "50")
+    const args = message.content.trim().split(/ +/);
+    const quantidade = parseInt(args[1]);
+
+    if (!quantidade || isNaN(quantidade) || quantidade <= 0) {
+        return message.reply('⚠️ Faz favor, meu truta, e indica um número válido entre 1 e 100 (Ex: `!apagar 50`).');
+    }
+
+    // Trava o limite estrito de no máximo 100 mensagens
+    if (quantidade > 100) {
+        return message.reply('⚠️ Parça, o limite máximo permitido por comando é de **100 mensagens** de uma só vez.');
+    }
+
+    try {
+        // Busca as mensagens incluindo a do comando
+        const messages = await message.channel.messages.fetch({ limit: quantidade + 1 });
+        
+        // Executa a exclusão em massa
+        await message.channel.bulkDelete(messages, true);
+
+        // Envia um aviso temporário que se apaga sozinho após 3 segundos
+        const confirm = await message.channel.send(`🧹 **${quantidade}** mensagens apagadas com sucesso!`);
+        setTimeout(() => confirm.delete().catch(() => {}), 3000);
+
+    } catch (error) {
+        console.error('Erro ao apagar mensagens:', error);
+        message.reply('❌ Ocorreu um erro. Lembre-se que o Discord não permite apagar em mensagens em massa com mais de 14 dias de envio.');
+    }
+});
 
 client.login(process.env.DISCORD_TOKEN);
 
