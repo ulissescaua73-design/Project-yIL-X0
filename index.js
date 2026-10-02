@@ -48,6 +48,15 @@ const ID_CANAL_EXECUTOR = '1554591514099851375';
 client.once('ready', async () => {
     console.log(`Bot online e com muita aura! Logado como ${client.user.tag}`);
 
+    // Configurar Rich Presence / Status do Bot
+    client.user.setPresence({
+        activities: [{
+            name: 'Gerindo os servidores // yIL',
+            type: 0, // ActivityType.Playing (0)
+        }],
+        status: 'online',
+    });
+
     // 1. Enviar painel de FastFlags (com Botão)
     try {
         const canalFflag = await client.channels.fetch(ID_CANAL_FFLAG);
@@ -103,6 +112,19 @@ client.once('ready', async () => {
         }
     } catch (err) {
         console.error('Erro ao enviar painel de executores:', err);
+    }
+
+    // Registar Comandos Slash na API do Discord
+    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
+    try {
+        console.log('🔄 A registar comandos slash (/) na API do Discord...');
+        await rest.put(
+            Routes.applicationCommands(client.user.id),
+            { body: [commandAnunciar.toJSON()] },
+        );
+        console.log('✅ Comandos slash registados com sucesso, meu mano!');
+    } catch (error) {
+        console.error('Erro ao registar comandos slash:', error);
     }
 });
 
@@ -188,11 +210,10 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-// Evento unificado e centralizado para TODOS os Modais (FastFlags e Anúncios)
+// Evento unificado e centralizado para Modais (FastFlags)
 client.on('interactionCreate', async interaction => {
     if (!interaction.isModalSubmit()) return;
 
-    // 1. Submissão do Modal das FastFlags
     if (interaction.customId === 'modal_fastflag') {
         await interaction.deferReply({ ephemeral: true });
 
@@ -209,39 +230,6 @@ client.on('interactionCreate', async interaction => {
             await interaction.editReply({
                 content: '❌ Ocorreu um erro ao gerar as FastFlags com a IA. Tenta novamente em instantes!'
             });
-        }
-        return;
-    }
-
-    // 2. Submissão do Modal de Anúncios
-    if (interaction.customId.startsWith('modal_anuncio_')) {
-        const canalId = interaction.customId.split('_')[2];
-        const canalDestino = interaction.guild.channels.cache.get(canalId);
-
-        if (!canalDestino) {
-            return interaction.reply({ content: '❌ Deu ruim: O canal de destino não foi encontrado.', ephemeral: true });
-        }
-
-        const titulo = interaction.fields.getTextInputValue('anuncio_titulo');
-        const mensagem = interaction.fields.getTextInputValue('anuncio_mensagem');
-
-        try {
-            const embedAnuncio = new EmbedBuilder()
-                .setDescription(mensagem)
-                .setColor(0x5865F2)
-                .setTimestamp();
-
-            if (titulo) {
-                embedAnuncio.setTitle(titulo);
-            }
-
-            await canalDestino.send({ embeds: [embedAnuncio] });
-
-            await interaction.reply({ content: `✅ Anúncio mandado com sucesso lá em ${canalDestino}, brabo!`, ephemeral: true });
-
-        } catch (error) {
-            console.error('Erro ao enviar anúncio do modal:', error);
-            await interaction.reply({ content: '❌ Erro ao enviar o anúncio. Confere se eu tenho permissão de enviar mensagens naquele canal!', ephemeral: true });
         }
         return;
     }
@@ -291,33 +279,43 @@ client.on('messageCreate', async message => {
 });
 
 // ==========================================
-// SISTEMA DE ANÚNCIOS VIA SLASH COMMAND
+// SISTEMA DE ANÚNCIOS VIA SLASH COMMAND FLEXÍVEL
 // ==========================================
 
 const commandAnunciar = new SlashCommandBuilder()
     .setName('anunciar')
-    .setDescription('Envia um anúncio profissional em embed através de um painel.')
+    .setDescription('Envia um anúncio em Embed Personalizada ou Texto Normal.')
     .addChannelOption(option => 
         option.setName('canal')
             .setDescription('Canal onde o anúncio vai ser enviado')
             .setRequired(true)
+    )
+    .addStringOption(option =>
+        option.setName('tipo')
+            .setDescription('Escolha o formato do anúncio')
+            .setRequired(true)
+            .addChoices(
+                { name: 'Embed Personalizada', value: 'embed' },
+                { name: 'Mensagem Normal (Texto Puro)', value: 'texto' }
+            )
+    )
+    .addStringOption(option =>
+        option.setName('mensagem')
+            .setDescription('O conteúdo principal do anúncio')
+            .setRequired(true)
+    )
+    .addStringOption(option =>
+        option.setName('titulo')
+            .setDescription('Título opcional do anúncio')
+            .setRequired(false)
+    )
+    .addStringOption(option =>
+        option.setName('cor')
+            .setDescription('Cor da Embed em Hexadecimal (ex: #5865F2 ou 5865F2)')
+            .setRequired(false)
     );
 
-client.once('ready', async () => {
-    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
-    try {
-        console.log('🔄 A registar comandos slash (/) na API do Discord...');
-        await rest.put(
-            Routes.applicationCommands(client.user.id),
-            { body: [commandAnunciar.toJSON()] },
-        );
-        console.log('✅ Comandos slash registados com sucesso, meu mano!');
-    } catch (error) {
-        console.error('Erro ao registar comandos slash:', error);
-    }
-});
-
-// Evento que abre a janelinha (Modal) quando dás o comando /anunciar
+// Execução do comando /anunciar
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
@@ -327,31 +325,51 @@ client.on('interactionCreate', async interaction => {
         }
 
         const canalDestino = interaction.options.getChannel('canal');
+        const tipoEnvio = interaction.options.getString('tipo');
+        const textoMensagem = interaction.options.getString('mensagem');
+        const titulo = interaction.options.getString('titulo');
+        const corInput = interaction.options.getString('cor');
 
-        const modal = new ModalBuilder()
-            .setCustomId(`modal_anuncio_${canalDestino.id}`)
-            .setTitle('Painel de Anúncios - Cria');
+        if (!canalDestino || !canalDestino.isTextBased()) {
+            return interaction.reply({ content: '❌ Seleciona um canal de texto válido, mano!', ephemeral: true });
+        }
 
-        const tituloInput = new TextInputBuilder()
-            .setCustomId('anuncio_titulo')
-            .setLabel('Título do Anúncio (opcional)')
-            .setPlaceholder('Ex: ATENÇÃO FAMÍLIA! 🚨')
-            .setStyle(TextInputStyle.Short)
-            .setRequired(false);
+        try {
+            if (tipoEnvio === 'texto') {
+                let conteudoFinal = textoMensagem;
+                if (titulo) {
+                    conteudoFinal = `**# ${titulo}**\n\n${textoMensagem}`;
+                }
+                await canalDestino.send({ content: conteudoFinal });
 
-        const mensagemInput = new TextInputBuilder()
-            .setCustomId('anuncio_mensagem')
-            .setLabel('Mensagem / Conteúdo principal')
-            .setPlaceholder('Escreve a fita completa do anúncio aqui...')
-            .setStyle(TextInputStyle.Paragraph)
-            .setRequired(true);
+            } else if (tipoEnvio === 'embed') {
+                let corHex = 0x5865F2;
+                if (corInput) {
+                    const limpaCor = corInput.replace('#', '');
+                    const parsedColor = parseInt(limpaCor, 16);
+                    if (!isNaN(parsedColor)) {
+                        corHex = parsedColor;
+                    }
+                }
 
-        modal.addComponents(
-            new ActionRowBuilder().addComponents(tituloInput),
-            new ActionRowBuilder().addComponents(mensagemInput)
-        );
+                const embedAnuncio = new EmbedBuilder()
+                    .setDescription(textoMensagem)
+                    .setColor(corHex)
+                    .setTimestamp();
 
-        await interaction.showModal(modal);
+                if (titulo) {
+                    embedAnuncio.setTitle(titulo);
+                }
+
+                await canalDestino.send({ embeds: [embedAnuncio] });
+            }
+
+            await interaction.reply({ content: `✅ Anúncio enviado com sucesso lá em ${canalDestino}, brabo!`, ephemeral: true });
+
+        } catch (error) {
+            console.error('Erro ao enviar anúncio:', error);
+            await interaction.reply({ content: `❌ Deu ruim ao enviar o anúncio: \`${error.message}\``, ephemeral: true });
+        }
     }
 });
 
