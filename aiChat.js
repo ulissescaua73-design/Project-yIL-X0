@@ -28,7 +28,7 @@ module.exports = (client) => {
 
           // Envia o prompt para o Gemini com o modelo atualizado exigido pela API
             const response = await ai.models.generateContent({
-                model: 'gemini-3.8-flash',
+                model: 'gemini-3.1-flash-lite',
                 contents: prompt,
                 config: {
                     systemInstruction: 'És a inteligência artificial oficial e cibernética deste servidor de Discord. Tens uma personalidade tech, urbana, prestativa, fala em português brasileiro de forma informal, direta e com estilo urbano, com gírias de rua de São Paulo como "parça, truta e etc". Seja prestativo e legal com os membros, pode ser mais malandro também e brincalhao, tendo uma personalide daora e admiravel do jeitao brasileiro. Seja irado e descolado.'
