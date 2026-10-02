@@ -47,11 +47,18 @@ const ID_CANAL_EXECUTOR = '1554591514099851375';
 
 client.once('ready', async () => {
     console.log(`Bot online e com muita aura! Logado como ${client.user.tag}`);
-
+// Configurar o Custom Status (o balãozinho de texto) + bolinha vermelha (dnd)
+    client.user.setPresence({
+        activities: [{
+            name: 'custom',
+            state: 'O bot mais aura do discord.',
+        }],
+        status: 'dnd',
+    });
     // Configurar Rich Presence / Status do Bot
     client.user.setPresence({
         activities: [{
-            name: 'Gerindo os servidores // yIL',
+            name: 'To farmando aura enquanto administro os servidores',
             type: 0, // ActivityType.Playing (0)
         }],
         status: 'online',
@@ -62,9 +69,9 @@ client.once('ready', async () => {
         const canalFflag = await client.channels.fetch(ID_CANAL_FFLAG);
         if (canalFflag) {
             const embedFflag = new EmbedBuilder()
-                .setColor('#00ffcc')
-                .setTitle('⚡ GERADOR DE FASTFLAGS // IA')
-                .setDescription('Clique no botão abaixo escolher as suas FastFlags personalizadas.');
+                .setColor('#000000')
+                .setTitle('⚡ GERADOR DE FLAG')
+                .setDescription('Clique no botão abaixo para gerar uma Flag personalizada.');
 
             const botaoFflag = new ButtonBuilder()
                 .setCustomId('btn_gerar_fflag')
@@ -87,7 +94,7 @@ client.once('ready', async () => {
         if (canalExecutor) {
             const embedExecutor = new EmbedBuilder()
                 .setColor('#2b2d31')
-                .setTitle('🚀 EXECUTORES E FERRAMENTAS // yIL')
+                .setTitle('🚀 EXECUTORES E FERRAMENTAS')
                 .setDescription('Clique no botão correspondente abaixo pra baixar o arquivo escolhido de forma segura.');
 
             // Botão para o FFM Installer
@@ -138,7 +145,7 @@ client.on('interactionCreate', async interaction => {
         if (interaction.customId === 'btn_gerar_fflag') {
             const modal = new ModalBuilder()
                 .setCustomId('modal_fastflag')
-                .setTitle('Configurador de FastFlags');
+                .setTitle('Configurador de Flag');
 
             const input = new TextInputBuilder()
                 .setCustomId('prompt_ff')
@@ -223,12 +230,12 @@ client.on('interactionCreate', async interaction => {
             const jsonResult = await gerarFastFlagGroq(userInput);
 
             await interaction.editReply({
-                content: `⚡ **FastFlags Personalizadas Geradas com Sucesso:**\n\`\`\`json\n${jsonResult}\n\`\`\``
+                content: `⚡ **Flag Personalizada Gerada com Sucesso:**\n\`\`\`json\n${jsonResult}\n\`\`\``
             });
         } catch (error) {
-            console.error('Erro ao gerar FastFlags via Groq:', error);
+            console.error('Erro ao gerar a flag:', error);
             await interaction.editReply({
-                content: '❌ Ocorreu um erro ao gerar as FastFlags com a IA. Tenta novamente em instantes!'
+                content: '❌ Ocorreu um erro ao gerar a flag. Tenta novamente depois!'
             });
         }
         return;
