@@ -6,7 +6,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 async function gerarFastFlagGroq(userPrompt) {
     try {
         const response = await ai.models.generateContent({
-            model: 'gemini-3.8-flash', // Mantém o modelo que já usas no bot
+            model: 'gemini-3.1-flash-lite', // Mantém o modelo que já usas no bot
             contents: `Gera um objeto JSON plano contendo FFlags reais, válidas e avançadas do Roblox (como FFlag..., DFInt..., etc.) para o Bloxstrap, com base no seguinte pedido do utilizador: "${userPrompt}". 
             
 REGRAS:
