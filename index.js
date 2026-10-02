@@ -47,19 +47,13 @@ const ID_CANAL_EXECUTOR = '1554591514099851375';
 
 client.once('ready', async () => {
     console.log(`Bot online e com muita aura! Logado como ${client.user.tag}`);
-// Configurar Status Customizado (balãozinho) + Rich Presence (atividade) + Bolinha DND
+// Configurar Rich Presence / Status do Bot
     client.user.setPresence({
-        activities: [
-            {
-                name: 'custom',
-                state: 'O bot mais aura do discord.', // O balãozinho de texto
-            },
-            {
-                name: 'To farmando aura enquanto administro os servidores', // A atividade logo abaixo
-                type: 0, // 0 = Playing / A jogar
-            }
-        ],
-        status: 'dnd', // Bolinha vermelha de Não Incomodar
+        activities: [{
+            name: 'To administrando server',
+            type: 0, // ActivityType.Playing (0)
+        }],
+        status: 'online',
     });
 
     // 1. Enviar painel de FastFlags (com Botão)
