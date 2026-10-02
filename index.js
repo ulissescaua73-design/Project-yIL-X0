@@ -106,7 +106,7 @@ client.once('ready', async () => {
     }
 });
 
-// Evento de Interações (Botões, Menus e Modais)
+// Evento de Interações (Botões e Menus)
 client.on('interactionCreate', async interaction => {
     
     // 1. Cliques em Botões
@@ -157,12 +157,12 @@ client.on('interactionCreate', async interaction => {
                 });
             } catch (err) {
                 console.error('Erro ao enviar Velostrap:', err);
-                await interaction.followUp({ content: '❌ Erro ao enviar o ficheiro.', ephemeral: true });
+                await interaction.followUp({ content: '❌ Erro ao enviar o Velostrap.', ephemeral: true });
             }
         }
     }
 
-    // 2. Menus de Seleção (caso ainda uses algum)
+    // 2. Menus de Seleção
     if (interaction.isStringSelectMenu()) {
         if (interaction.customId === 'painel_executor_menu') {
             const escolha = interaction.values[0];
@@ -186,9 +186,14 @@ client.on('interactionCreate', async interaction => {
             }
         }
     }
+});
 
-    // 3. Submissão do Modal das FastFlags
-    if (interaction.isModalSubmit() && interaction.customId === 'modal_fastflag') {
+// Evento unificado e centralizado para TODOS os Modais (FastFlags e Anúncios)
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isModalSubmit()) return;
+
+    // 1. Submissão do Modal das FastFlags
+    if (interaction.customId === 'modal_fastflag') {
         await interaction.deferReply({ ephemeral: true });
 
         const userInput = interaction.fields.getTextInputValue('prompt_ff');
@@ -205,8 +210,44 @@ client.on('interactionCreate', async interaction => {
                 content: '❌ Ocorreu um erro ao gerar as FastFlags com a IA. Tenta novamente em instantes!'
             });
         }
+        return;
+    }
+
+    // 2. Submissão do Modal de Anúncios
+    if (interaction.customId.startsWith('modal_anuncio_')) {
+        const canalId = interaction.customId.split('_')[2];
+        const canalDestino = interaction.guild.channels.cache.get(canalId);
+
+        if (!canalDestino) {
+            return interaction.reply({ content: '❌ Deu ruim: O canal de destino não foi encontrado.', ephemeral: true });
+        }
+
+        const titulo = interaction.fields.getTextInputValue('anuncio_titulo');
+        const mensagem = interaction.fields.getTextInputValue('anuncio_mensagem');
+
+        try {
+            const embedAnuncio = new EmbedBuilder()
+                .setDescription(mensagem)
+                .setColor(0x5865F2)
+                .setTimestamp();
+
+            if (titulo) {
+                embedAnuncio.setTitle(titulo);
+            }
+
+            await canalDestino.send({ embeds: [embedAnuncio] });
+
+            await interaction.reply({ content: `✅ Anúncio mandado com sucesso lá em ${canalDestino}, brabo!`, ephemeral: true });
+
+        } catch (error) {
+            console.error('Erro ao enviar anúncio do modal:', error);
+            await interaction.reply({ content: '❌ Erro ao enviar o anúncio. Confere se eu tenho permissão de enviar mensagens naquele canal!', ephemeral: true });
+        }
+        return;
     }
 });
+
+// Comando de apagar mensagens
 client.on('messageCreate', async message => {
     if (message.author.bot || !message.content.startsWith('!apagar')) return;
 
@@ -226,10 +267,8 @@ client.on('messageCreate', async message => {
     }
 
     try {
-        // Manda a mensagem do comando de vasco primeiro pra não bugar a contagem
         await message.delete().catch(() => {});
 
-        // Puxa as mensagens do canal
         const messages = await message.channel.messages.fetch({ limit: quantidade });
         
         if (messages.size === 0) {
@@ -238,7 +277,6 @@ client.on('messageCreate', async message => {
             });
         }
 
-        // Passa o cerol e apaga a massa
         const deleted = await message.channel.bulkDelete(messages, true);
 
         const confirm = await message.channel.send(`🧹 **${deleted.size}** mensagens apagadas com sucesso, brabo!`);
@@ -253,10 +291,9 @@ client.on('messageCreate', async message => {
 });
 
 // ==========================================
-// SISTEMA DE ANÚNCIOS VIA SLASH COMMAND E MODAL
+// SISTEMA DE ANÚNCIOS VIA SLASH COMMAND
 // ==========================================
 
-// 1. Definição do comando slash
 const commandAnunciar = new SlashCommandBuilder()
     .setName('anunciar')
     .setDescription('Envia um anúncio profissional em embed através de um painel.')
@@ -266,7 +303,6 @@ const commandAnunciar = new SlashCommandBuilder()
             .setRequired(true)
     );
 
-// 2. Registo automático do comando na API do Discord ao ligar (podes meter logo após o client.login ou no ready)
 client.once('ready', async () => {
     const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
     try {
@@ -281,7 +317,7 @@ client.once('ready', async () => {
     }
 });
 
-// 3. Evento que abre a janelinha (Modal) quando dás o comando /anunciar
+// Evento que abre a janelinha (Modal) quando dás o comando /anunciar
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
@@ -316,42 +352,6 @@ client.on('interactionCreate', async interaction => {
         );
 
         await interaction.showModal(modal);
-    }
-});
-
-// 4. Evento que processa o que escreveste no modal e envia para o canal escolhido
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isModalSubmit()) return;
-
-    if (interaction.customId.startsWith('modal_anuncio_')) {
-        const canalId = interaction.customId.split('_')[2];
-        const canalDestino = interaction.guild.channels.cache.get(canalId);
-
-        if (!canalDestino) {
-            return interaction.reply({ content: '❌ Deu ruim: O canal de destino não foi encontrado.', ephemeral: true });
-        }
-
-        const titulo = interaction.fields.getTextInputValue('anuncio_titulo');
-        const mensagem = interaction.fields.getTextInputValue('anuncio_mensagem');
-
-        try {
-            const embedAnuncio = new EmbedBuilder()
-                .setDescription(mensagem)
-                .setColor(0x5865F2)
-                .setTimestamp();
-
-            if (titulo) {
-                embedAnuncio.setTitle(titulo);
-            }
-
-            await canalDestino.send({ embeds: [embedAnuncio] });
-
-            await interaction.reply({ content: `✅ Anúncio mandado com sucesso lá em ${canalDestino}, brabo!`, ephemeral: true });
-
-        } catch (error) {
-            console.error('Erro ao enviar anúncio do modal:', error);
-            interaction.reply({ content: '❌ Erro ao enviar o anúncio. Confere se eu tenho permissão de enviar mensagens naquele canal!', ephemeral: true });
-        }
     }
 });
 
