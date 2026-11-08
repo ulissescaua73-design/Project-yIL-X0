@@ -8,7 +8,8 @@ const {
     ModalBuilder, 
     TextInputBuilder, 
     TextInputStyle, 
-    SlashCommandBuilder, 
+    SlashCommandBuilder,
+    MessageFlags, 
     REST, 
     Routes, 
     StringSelectMenuBuilder, 
@@ -119,7 +120,7 @@ client.once('ready', async () => {
         console.log('🔄 A registar comandos slash (/) na API do Discord...');
         await rest.put(
             Routes.applicationCommands(client.user.id),
-            { body: [commandAnunciar.toJSON()] },
+            { body: [commandAnunciar.toJSON(), commandCpfTeste.toJSON()] },
         );
         console.log('✅ Comandos slash registados com sucesso, meu mano!');
     } catch (error) {
@@ -314,9 +315,47 @@ const commandAnunciar = new SlashCommandBuilder()
             .setRequired(false)
     );
 
-// Execução do comando /anunciar
+// Dados fictícios publicados na demonstração da Consulta CPF do Serpro.
+const cadastrosCpfTeste = new Map([
+    ['40442820135', { nome: 'Pessoa Teste A', nascimento: '14/11/1970', situacao: 'Regular' }],
+    ['40532176871', { nome: 'Pessoa Teste B', nascimento: '22/03/1982', situacao: 'Suspensa' }],
+    ['07691852312', { nome: 'Pessoa Teste C', nascimento: '13/08/2000', situacao: 'Pendente de regularização' }],
+]);
+
+const commandCpfTeste = new SlashCommandBuilder()
+    .setName('cpf-teste')
+    .setDescription('Consulta um cadastro fictício de demonstração.')
+    .addStringOption(option => option
+        .setName('cpf')
+        .setDescription('Escolha um CPF fictício da lista.')
+        .setRequired(true)
+        .addChoices(...Array.from(cadastrosCpfTeste.keys(), cpf => ({ name: cpf, value: cpf }))));
+
+// Execução dos comandos slash
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
+
+    if (interaction.commandName === 'cpf-teste') {
+        const cpf = interaction.options.getString('cpf', true);
+        const cadastro = cadastrosCpfTeste.get(cpf);
+        if (!cadastro) {
+            return interaction.reply({
+                content: 'Selecione um CPF fictício da lista para fazer o teste.',
+                flags: MessageFlags.Ephemeral,
+            });
+        }
+
+        const embed = new EmbedBuilder()
+            .setColor(0x5865F2)
+            .setTitle('Consulta CPF • Demonstração')
+            .addFields(
+                { name: 'CPF de teste', value: cpf },
+                { name: 'Nome', value: cadastro.nome },
+                { name: 'Data de nascimento', value: cadastro.nascimento },
+                { name: 'Situação cadastral', value: cadastro.situacao },
+            );
+        return interaction.reply({ embeds: [embed], flags: MessageFlags.Ephemeral });
+    }
 
     if (interaction.commandName === 'anunciar') {
         if (!interaction.member.permissions.has('ManageMessages')) {
