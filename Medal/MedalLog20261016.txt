@@ -1,0 +1,847 @@
+[Info | 6:59:46 PM | 1] [Medal Log Init] 2642.2986.1 - 10/16/2026 6:59:46 PM
+
+[Debug | 6:59:46 PM | 1] Settings [scope:<global>]: Environment changed from  --> production
+[Info | 6:59:46 PM | 1] Remote config downloaded
+[Debug | 6:59:46 PM | 1] Initialising Sentry with environment production and URL sentry.medal.tv
+[Info | 6:59:46 PM | 1] Parent process: name=Medal.exe, electronVersion=2642.556.1
+[Info | 6:59:46 PM | 1] MedalEncoder arguments: "--electronPort", "10603", "--environment", "production", "--wsComms"
+[Info | 6:59:47 PM | 1] Honeycomb init successful, environment production and local sample rate 30
+[Info | 6:59:47 PM | 1] Trace initialized (device.id=a03f27b6-379b-446c-a26c-92d10738fd47, service.instance.id=48b27bf7-d8e2-47d4-bbb8-5aa2a15d9e4d)
+[Debug | 6:59:47 PM | 1] [Scope] [18:59:47.912594] [000001] trying to load Scope native library with default paths
+[Debug | 6:59:48 PM | 1] [Scope] [18:59:48.038179] [000001] Scope native library loaded (runtime 23.1, ScopeSharp 23.1)
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.045482] [0010CC] Scope context initialising (API 23.1)
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.045586] [0010CC] machine GUID: a03f27b6-379b-446c-a26c-92d10738fd47
+[Info | 6:59:48 PM | 14] [Scope] [18:59:48.204545] [0010CC] sentry initialized successfully
+[Info | 6:59:48 PM | 14] [Scope] [18:59:48.212991] [0010CC] running on OS: Windows 10.0.26300.0
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.213051] [0010CC] initialising DX device manager
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.213095] [0010CC] initialising DX factories (iteration 1)
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.224526] [0010CC] created DXGI factory at feature level 2
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.224588] [0010CC] created D2D factory at feature level 7
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.300364] [0010CC] created D3D9Ex factory
+[Debug | 6:59:48 PM | 14] [Scope] [18:59:48.379140] [0010CC] DXDeviceManager got default adapter LUID: 37223
+[Debug | 6:59:48 PM | 1] [PerfAnalyzer] Disabled by config, skipping initialization
+[Info | 6:59:48 PM | 1] Custom database location is C:\Users\uliss\AppData\Roaming\Medal\CustomGameDatabase.db
+[Debug | 6:59:48 PM | 15] Window thread message loop starting: Common
+[Info | 6:59:48 PM | 1] Recorder running elevated: no
+[Info | 6:59:48 PM | 1] Performance Log Users member: yes
+[Info | 6:59:48 PM | 1] No other MedalEncoder instances running
+[Info | 6:59:48 PM | 1] [WSConnection] Attempting to connect to WebSocket at ws://127.0.0.1:10603
+[Info | 6:59:48 PM | 1] [WSConnection] WebSocket connection successful
+[Warning | 6:59:48 PM | 7] [JsonRpcTraceListener] warning: No target methods are registered that match "user".
+[Info | 6:59:49 PM | 1] [WSRequests] Handshake successful. Using version 1
+[Debug | 6:59:49 PM | 14] [Scope] [18:59:49.076207] [0010CC] WASAPI loopback device enum: found 3 devices, default: Alto-falantes (fifine Headset) ({0.0.0.00000000}.{0f25047f-493d-467f-a13b-dbd9c7c5d4fa})
+[Debug | 6:59:49 PM | 14] [Scope] [18:59:49.078340] [0010CC] WASAPI capture device enum: found 1 devices, default: Microfone (fifine Headset) ({0.0.1.00000000}.{f23fc042-ea5a-49bf-b88c-8b3db9815d37})
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: User ID changed from -1 --> 499561012
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Username changed from  --> ulxzs
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Auth Key changed from <hidden> --> <hidden>
+[Info | 6:59:49 PM | 1] User updated 499561012 - ulxzs
+[Debug | 6:59:49 PM | 7] Going to switch to new game info DB from C:\Users\uliss\AppData\Local\Medal\recorder-2642.2986.1\MedalGameInfo.db
+[Debug | 6:59:49 PM | 7] Acquired game info DB write lock
+[Debug | 6:59:49 PM | 7] Successfully switched to new game info DB
+[Debug | 6:59:49 PM | 7] Released game info DB write lock
+[Debug | 6:59:49 PM | 7] Opened existing default game info DB
+[Info | 6:59:49 PM | 8] Checking for new Game Info DB version from https://cdn.medal.tv/asset/games-db/production/version.json
+[Debug | 6:59:49 PM | 7] [AutoClipCatalog] Games DB  carries no auto clip tables; keeping the recorder's own tuning
+[Info | 6:59:49 PM | 8] Remote Info: {"Version":"2.2131","Command":"none","Environment":"production"}
+[Info | 6:59:49 PM | 8] Local Info: {"Version":"0.0","Command":"none","Environment":"production"}
+[Info | 6:59:49 PM | 8] Downloading new game database from https://cdn.medal.tv/asset/games-db/production/MedalGameInfo-2.2131.db
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Audio Mode Configuration changed from {"type":null,"sources":null,"devices":null,"volume":50,"pcAudioEnabled":false} --> {"type":"splitByProcess","sources":[{"id":"game-audio","enabled":true,"volume":100},{"id":"MedalEncoder.exe","enabled":true,"volume":100},{"id":"Discord.exe","enabled":true,"volume":100}],"devices":null,"volume":50,"pcAudioEnabled":false}
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Bitrate changed from 10 --> 15
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Clip Folder changed from C:\Medal --> C:\Users\uliss\Videos\Medal\
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Codec changed from H264 --> H265
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: External File Sources changed from  --> {"folders":[]}
+[Info | 6:59:49 PM | 7] Setting up external recorders
+[Info | 6:59:49 PM | 1] [Settings] Settings received: [{"key":"AdvancedWindowCapture","value":false,"categoryId":null},{"key":"AspectRatio","value":"Custom","categoryId":null},{"key":"AudioModeConfig","value":{"type":"splitByProcess","sources":[{"id":"game-audio","enabled":true,"volume":100},{"id":"MedalEncoder.exe","enabled":true,"volume":100},{"id":"Discord.exe","enabled":true,"volume":100}]},"categoryId":null},{"key":"Bitrate","value":15,"categoryId":null},{"key":"ClipFolder","value":"C:\\Users\\uliss\\Videos\\Medal\\","categoryId":null},{"key":"Codec","value":"H265","categoryId":null},{"key":"DevelopmentMode","value":false,"categoryId":null},{"key":"ProfileRecommendationServicesEnabled","value":true,"categoryId":null},{"key":"Encoder","value":"GPU","categoryId":null},{"key":"ExperimentalCapture","value":false,"categoryId":null},{"key":"ExternalFileSources","value":"{\"folders\":[]}","categoryId":null},{"key":"ForceWindowCapture","value":false,"categoryId":null},{"key":"FpsMode","value":"VFR","categoryId":null},{"key":"FullSessionMode","value":false,"categoryId":null},{"key":"GameAudioOnly","value":false,"categoryId":null},{"key":"GameControlsCollectionEnabled","value":true,"categoryId":null},{"key":"ClipSavedSoundAlerts","value":true,"categoryId":null},{"key":"BookmarkSavedSoundAlerts","value":true,"categoryId":null},{"key":"SessionToggleSoundAlerts","value":true,"categoryId":null},{"key":"AutoClippingSoundAlerts","value":false,"categoryId":null},{"key":"DiskFullSoundAlerts","value":true,"categoryId":null},{"key":"ScreenshotSoundAlerts","value":true,"categoryId":null},{"key":"GlobalSoundAlerts","value":true,"categoryId":null},{"key":"ClipSound","value":"default","categoryId":null},{"key":"ClipSoundPath","value":null,"categoryId":null},{"key":"AudioNotificationVolume","value":1,"categoryId":null},{"key":"HDRCompatibility","value":false,"categoryId":null},{"key":"Hotkeys","value":{"hotkeys":[{"action":"clip;length=20","device":"keyboard","type":"short_press","inputs":"F8"},{"action":"segment_toggle","device":"keyboard","type":"short_press","inputs":"ALT + F7"},{"action":"bookmark","device":"keyboard","type":"short_press","inputs":"F8"},{"action":"switch_game","device":"keyboard","type":"short_press","inputs":"F10"},{"action":"screenshot","device":"keyboard","type":"short_press","inputs":"F7"}]},"categoryId":null},{"key":"ICYMIEnabled","value":true,"categoryId":null},{"key":"ICYMIEventSettings","value":{"23F-rzvT_Wq":{"GameName":"Airport Security Sucks!","Enabled":true,"CategoryStringID":"23F-rzvT_Wq","ForceDisabled":false,"Events":{"1":{"EventName":"Game Over","Enabled":false,"EventID":1,"Icon":"icymiTombstone","ForceDisabled":false},"2":{"EventName":"Jailed","Enabled":false,"EventID":2,"Icon":"icymiCastle","ForceDisabled":false},"3":{"EventName":"Ragdolled","Enabled":false,"EventID":3,"Icon":"icymiDeadSkull","ForceDisabled":false},"4":{"EventName":"Cupcake Attacks You","Enabled":false,"EventID":4,"Icon":"icymiFist","ForceDisabled":false},"5":{"EventName":"Smuggle Contraband","Enabled":false,"EventID":5,"Icon":"icymiFlag","ForceDisabled":false},"6":{"EventName":"3+ Ragdolls Explode","Enabled":true,"EventID":6,"Icon":"icymiThreeSkulls","ForceDisabled":false},"7":{"EventName":"Boom Vest","Enabled":true,"EventID":7,"Icon":"icymiExplosion","ForceDisabled":false}}},"31sDPVvnKB":{"GameName":"American Truck Simulator","Enabled":true,"CategoryStringID":"31sDPVvnKB","ForceDisabled":false,"Events":{"1":{"EventName":"Plugin Events","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"1yiAFx4tcmo":{"GameName":"Arena Breakout Infinite","Enabled":true,"CategoryStringID":"1yiAFx4tcmo","ForceDisabled":false,"Events":{"1":{"EventName":"Player kill","Enabled":true,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Bot kill","Enabled":true,"EventID":2,"Icon":"icymiDeadSkull","ForceDisabled":false},"3":{"EventName":"Death","Enabled":true,"EventID":3,"Icon":"icymiTombstone","ForceDisabled":false}}},"1giLEcuGln2":{"GameName":"Counter-Strike 2","Enabled":true,"CategoryStringID":"1giLEcuGln2","ForceDisabled":false,"Events":{"1":{"EventName":"Kill","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Headshot","Enabled":false,"GroupID":2,"EventID":2,"Icon":"icymiTarget","ForceDisabled":false},"3":{"EventName":"Death","Enabled":false,"EventID":3,"Icon":"icymiTombstone","ForceDisabled":false},"4":{"EventName":"Assist","Enabled":false,"EventID":4,"Icon":"icymiFist","ForceDisabled":false},"7":{"EventName":"2K","Enabled":false,"GroupID":1,"EventID":7,"Icon":"icymiDeadSkull","ForceDisabled":false},"8":{"EventName":"3K","Enabled":true,"GroupID":1,"EventID":8,"Icon":"icymiDeadSkull","ForceDisabled":false},"9":{"EventName":"4K","Enabled":true,"GroupID":1,"EventID":9,"Icon":"icymiDeadSkull","ForceDisabled":false},"10":{"EventName":"Ace","Enabled":true,"GroupID":1,"EventID":10,"Icon":"icymiDeadSkull","ForceDisabled":false},"11":{"EventName":"Knife","Enabled":true,"GroupID":2,"EventID":11,"Icon":"icymiKnife","ForceDisabled":false},"12":{"EventName":"Zeus","Enabled":true,"GroupID":2,"EventID":12,"Icon":"icymiExplosion","ForceDisabled":false},"13":{"EventName":"One Tap","Enabled":true,"GroupID":2,"EventID":13,"Icon":"icymiSights","ForceDisabled":false},"14":{"EventName":"Collateral","Enabled":true,"GroupID":2,"EventID":14,"Icon":"icymiCrossbones","ForceDisabled":false}},"Groups":{"1":"All Kills","2":"Special Kills"},"GameModes":{"competitive":{"Name":"Competitive","Description":"Premier, Competitive, FACEIT, and some custom servers.","Enabled":true},"scrimcomp2v2":{"Name":"Wingman","Enabled":true},"casual":{"Name":"Casual","Enabled":true},"deathmatch":{"Name":"Deathmatch","Enabled":false},"gungameprogressive":{"Name":"Arms Race","Enabled":false},"retakes":{"Name":"Retakes","Enabled":false},"rush":{"Name":"Rush","Enabled":true},"other":{"Name":"Other","Description":"Other modes, custom servers, or unavailable mode information.","Enabled":false}}},"1MC_BVn3W7R":{"GameName":"Dead as Disco","Enabled":true,"CategoryStringID":"1MC_BVn3W7R","ForceDisabled":false,"Events":{"1":{"EventName":"Takedown","Enabled":false,"EventID":1,"Icon":"icymiCrossbones","ForceDisabled":false},"2":{"EventName":"Round Finished","Enabled":false,"EventID":2,"Icon":"icymiFlag","ForceDisabled":false},"3":{"EventName":"Perfect Counter","Enabled":false,"EventID":3,"Icon":"icymiTarget","ForceDisabled":false},"4":{"EventName":"Charlie Down","Enabled":false,"EventID":4,"Icon":"icymiSkull","ForceDisabled":false},"5":{"EventName":"Dance","Enabled":false,"EventID":5,"Icon":"icymiHearts","ForceDisabled":false},"6":{"EventName":"Level Complete","Enabled":true,"EventID":6,"Icon":"icymiCrown","ForceDisabled":false},"7":{"EventName":"Combo Streak","Enabled":true,"EventID":7,"Icon":"icymiFire","ForceDisabled":false},"8":{"EventName":"Multi K.O","Enabled":true,"EventID":8,"Icon":"icymiThreeSkulls","ForceDisabled":false}}},"f-7RbbhET":{"GameName":"Dota 2","Enabled":true,"CategoryStringID":"f-7RbbhET","ForceDisabled":false,"Events":{"1":{"EventName":"Kill","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Death","Enabled":false,"EventID":2,"Icon":"icymiTombstone","ForceDisabled":false},"3":{"EventName":"Assist","Enabled":false,"EventID":3,"Icon":"icymiFist","ForceDisabled":false},"4":{"EventName":"Aegis Picked Up","Enabled":false,"EventID":4,"Icon":"icymiDeadSkull","ForceDisabled":false},"5":{"EventName":"Aegis Snatched","Enabled":true,"EventID":5,"Icon":"icymiDeadSkull","ForceDisabled":false},"6":{"EventName":"Double Kill","Enabled":false,"GroupID":1,"EventID":6,"Icon":"icymiDeadSkull","ForceDisabled":false},"7":{"EventName":"TRIPLE Kill","Enabled":true,"GroupID":1,"EventID":7,"Icon":"icymiDeadSkull","ForceDisabled":false},"8":{"EventName":"ULTRA KILL!","Enabled":true,"GroupID":1,"EventID":8,"Icon":"icymiDeadSkull","ForceDisabled":false},"9":{"EventName":"RAMPAGE!!!","Enabled":true,"GroupID":1,"EventID":9,"Icon":"icymiDeadSkull","ForceDisabled":false}},"Groups":{"1":"All Kills"}},"fah-qzqo6No":{"GameName":"DREGS","Enabled":true,"CategoryStringID":"fah-qzqo6No","ForceDisabled":false,"Events":{"1":{"EventName":"Death","Enabled":true,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false}}},"3C6RvNAImg":{"GameName":"EA Sports FC Online","Enabled":true,"CategoryStringID":"3C6RvNAImg","ForceDisabled":false,"Events":{"1":{"EventName":"Goal","Enabled":true,"EventID":1,"Icon":"icymiFireball","ForceDisabled":false},"2":{"EventName":"Goal (Opponent)","Enabled":true,"EventID":2,"Icon":"icymiF","ForceDisabled":false},"3":{"EventName":"Own Goal","Enabled":true,"EventID":3,"Icon":"icymiF","ForceDisabled":false},"4":{"EventName":"Own Goal (Opponent)","Enabled":true,"EventID":4,"Icon":"icymiExplosion","ForceDisabled":false},"5":{"EventName":"Save","Enabled":true,"EventID":5,"Icon":"icymiExplosion2","ForceDisabled":false},"6":{"EventName":"Save (Opponent)","Enabled":true,"EventID":6,"Icon":"icymiFist","ForceDisabled":false},"7":{"EventName":"Shots","Enabled":true,"EventID":7,"Icon":"icymiF","ForceDisabled":false},"8":{"EventName":"Rules","Enabled":true,"EventID":8,"Icon":"icymiFlag","ForceDisabled":false},"9":{"EventName":"Player Crafting","Enabled":true,"EventID":9,"Icon":"icymiFireball","ForceDisabled":false},"10":{"EventName":"Player Pack Opening","Enabled":true,"EventID":10,"Icon":"icymiMagicSmoke","ForceDisabled":false}}},"dt7WA3OzKNM":{"GameName":"EMPULSE","Enabled":true,"CategoryStringID":"dt7WA3OzKNM","ForceDisabled":false,"Events":{"1":{"EventName":"Double Kill","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiCrossbones","ForceDisabled":false},"2":{"EventName":"Triple Kill","Enabled":false,"GroupID":1,"EventID":2,"Icon":"icymiThreeSkulls","ForceDisabled":false},"3":{"EventName":"Quad Kill","Enabled":true,"GroupID":1,"EventID":3,"Icon":"icymiThreeSkulls","ForceDisabled":false},"4":{"EventName":"Penta Kill","Enabled":true,"GroupID":1,"EventID":4,"Icon":"icymiThreeSkulls","ForceDisabled":false},"5":{"EventName":"Hexa Kill","Enabled":true,"GroupID":1,"EventID":5,"Icon":"icymiThreeSkulls","ForceDisabled":false},"6":{"EventName":"Hepta Kill","Enabled":true,"GroupID":1,"EventID":6,"Icon":"icymiThreeSkulls","ForceDisabled":false},"7":{"EventName":"Octa Kill","Enabled":true,"GroupID":1,"EventID":7,"Icon":"icymiThreeSkulls","ForceDisabled":false},"8":{"EventName":"5 Kill Streak","Enabled":false,"GroupID":2,"EventID":8,"Icon":"icymiSkull","ForceDisabled":false},"9":{"EventName":"10 Kill Streak","Enabled":true,"GroupID":2,"EventID":9,"Icon":"icymiSkull","ForceDisabled":false},"10":{"EventName":"15 Kill Streak","Enabled":true,"GroupID":2,"EventID":10,"Icon":"icymiSkull","ForceDisabled":false},"11":{"EventName":"20 Kill Streak","Enabled":true,"GroupID":2,"EventID":11,"Icon":"icymiSkull","ForceDisabled":false},"12":{"EventName":"25 Kill Streak","Enabled":true,"GroupID":2,"EventID":12,"Icon":"icymiSkull","ForceDisabled":false},"13":{"EventName":"Grand Slam","Enabled":true,"EventID":13,"Icon":"icymiCrown","ForceDisabled":false},"14":{"EventName":"Clutch","Enabled":true,"EventID":14,"Icon":"icymiDeadSkull","ForceDisabled":false},"15":{"EventName":"Lockdown","Enabled":true,"EventID":15,"Icon":"icymiDeadSkull","ForceDisabled":false},"16":{"EventName":"Lone Wolf","Enabled":true,"EventID":16,"Icon":"icymiDeadSkull","ForceDisabled":false},"17":{"EventName":"Hard Carry","Enabled":true,"EventID":17,"Icon":"icymiDeadSkull","ForceDisabled":false},"18":{"EventName":"Mech Ace","Enabled":true,"EventID":18,"Icon":"icymiThreeSkulls","ForceDisabled":false},"19":{"EventName":"Hail Mary","Enabled":true,"EventID":19,"Icon":"icymiLudicrousShot","ForceDisabled":false},"20":{"EventName":"Shoot the Messenger","Enabled":true,"EventID":20,"Icon":"icymiGun","ForceDisabled":false}},"Groups":{"1":"Multi-Kills","2":"Kill Streaks"}},"1HkRV7MERT":{"GameName":"Euro Truck Simulator 2","Enabled":true,"CategoryStringID":"1HkRV7MERT","ForceDisabled":false,"Events":{"1":{"EventName":"Plugin Events","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"10cJzcPADb":{"GameName":"Fortnite","Enabled":true,"CategoryStringID":"10cJzcPADb","ForceDisabled":false,"Events":{"1":{"EventName":"Eliminated Player","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Got Eliminated","Enabled":false,"EventID":2,"Icon":"icymiTombstone","ForceDisabled":false},"3":{"EventName":"Victory Royale","Enabled":true,"EventID":3,"Icon":"icymiCrown","ForceDisabled":false},"4":{"EventName":"Long Distance Shot","Enabled":true,"GroupID":1,"EventID":4,"Icon":"icymiTarget","ForceDisabled":false},"5":{"EventName":"Ludicrous Shot","Enabled":true,"GroupID":1,"EventID":5,"Icon":"icymiSights","ForceDisabled":false},"6":{"EventName":"Double Kill","Enabled":true,"GroupID":1,"EventID":6,"Icon":"icymiCrossbones","ForceDisabled":false},"7":{"EventName":"Multi Kill","Enabled":true,"GroupID":1,"EventID":7,"Icon":"icymiThreeSkulls","ForceDisabled":false}},"Groups":{"1":"All Kills"}},"1zecpLn85O7":{"GameName":"Ghost Janitors","Enabled":true,"CategoryStringID":"1zecpLn85O7","ForceDisabled":false,"Events":{"1":{"EventName":"Jump Scares","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Brutal Jump Scares","Enabled":true,"EventID":2,"Icon":"icymiDeadSkull","ForceDisabled":false},"3":{"EventName":"Death","Enabled":true,"EventID":3,"Icon":"icymiDeadSkull","ForceDisabled":false}}},"r-K7qepLC":{"GameName":"GTA V","Enabled":true,"CategoryStringID":"r-K7qepLC","ForceDisabled":false,"Events":{"1":{"EventName":"FiveM Server Events","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"1GiXcAXZ7Ty":{"GameName":"Kingdom Come: Deliverance II","Enabled":true,"CategoryStringID":"1GiXcAXZ7Ty","ForceDisabled":false,"Events":{"1":{"EventName":"Plugin Events","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"bQnfO2HXP":{"GameName":"League of Legends","Enabled":true,"CategoryStringID":"bQnfO2HXP","ForceDisabled":false,"Events":{"1":{"EventName":"Enemy Slain","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Triple Kill","Enabled":true,"GroupID":1,"EventID":2,"Icon":"icymiThreeSkulls","ForceDisabled":false},"3":{"EventName":"Quadra Kill","Enabled":true,"GroupID":1,"EventID":3,"Icon":"icymiSkull","ForceDisabled":false},"4":{"EventName":"Pentakill","Enabled":true,"GroupID":1,"EventID":4,"Icon":"icymiNotch","ForceDisabled":false},"5":{"EventName":"Double Kill","Enabled":false,"GroupID":1,"EventID":5,"Icon":"icymiCrossbones","ForceDisabled":false},"6":{"EventName":"Ace","Enabled":false,"GroupID":1,"EventID":6,"Icon":"icymiCrown","ForceDisabled":false},"7":{"EventName":"Player Slain","Enabled":false,"EventID":7,"Icon":"icymiTombstone","ForceDisabled":false},"8":{"EventName":"Baron Steal","Enabled":true,"GroupID":2,"EventID":8,"Icon":"icymiSkull","ForceDisabled":false},"9":{"EventName":"Baron Kill","Enabled":false,"GroupID":2,"EventID":9,"Icon":"icymiSkull","ForceDisabled":false},"10":{"EventName":"Turret Destroyed","Enabled":false,"GroupID":3,"EventID":10,"Icon":"icymiCastle","ForceDisabled":false},"11":{"EventName":"Inhibitor Destroyed","Enabled":false,"GroupID":3,"EventID":11,"Icon":"icymiCastle","ForceDisabled":false},"12":{"EventName":"Dragon Steal","Enabled":true,"GroupID":2,"EventID":12,"Icon":"icymiFireball","ForceDisabled":false},"13":{"EventName":"Dragon Kill","Enabled":false,"GroupID":2,"EventID":13,"Icon":"icymiFireball","ForceDisabled":false},"14":{"EventName":"Herald Steal","Enabled":false,"GroupID":2,"EventID":14,"Icon":"icymiSkull","ForceDisabled":false},"15":{"EventName":"Herald Kill","Enabled":false,"GroupID":2,"EventID":15,"Icon":"icymiSkull","ForceDisabled":false},"16":{"EventName":"Assist","Enabled":false,"EventID":16,"Icon":"icymiFist","ForceDisabled":false},"17":{"EventName":"Voidgrub Steal","Enabled":false,"GroupID":2,"EventID":17,"Icon":"icymiSkull","ForceDisabled":false},"18":{"EventName":"Voidgrub Kill","Enabled":false,"GroupID":2,"EventID":18,"Icon":"icymiSkull","ForceDisabled":false}},"Groups":{"1":"All Kills","2":"All Epic Monsters","3":"All Objectives"}},"hAXdelx2t":{"GameName":"Minecraft","Enabled":true,"CategoryStringID":"hAXdelx2t","ForceDisabled":false,"Events":{"1":{"EventName":"Minecraft Events","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"17TfcRrk82u":{"GameName":"Overwatch","Enabled":true,"CategoryStringID":"17TfcRrk82u","ForceDisabled":false,"Events":{"1":{"EventName":"Manual Highlight","Enabled":true,"GroupID":1,"EventID":1,"Icon":"icymiFlag","ForceDisabled":false},"2":{"EventName":"Top5","Enabled":true,"GroupID":1,"EventID":2,"Icon":"icymiLudicrousShot","ForceDisabled":false},"3":{"EventName":"Play of the Game","Enabled":true,"GroupID":1,"EventID":3,"Icon":"icymiCrown","ForceDisabled":false}},"Groups":{"1":"All Highlights"}},"F6MuXa5mt":{"GameName":"PUBG","Enabled":true,"CategoryStringID":"F6MuXa5mt","ForceDisabled":false,"Events":{"1":{"EventName":"Chicken Dinner","Enabled":true,"EventID":1,"Icon":"icymiCrown","ForceDisabled":false},"2":{"EventName":"Kill","Enabled":true,"EventID":2,"Icon":"icymiDeadSkull","ForceDisabled":false},"3":{"EventName":"Groggy","Enabled":true,"EventID":3,"Icon":"icymiSights","ForceDisabled":false},"4":{"EventName":"Down","Enabled":false,"EventID":4,"Icon":"icymiCrossbones","ForceDisabled":false},"5":{"EventName":"Death","Enabled":false,"EventID":5,"Icon":"icymiTombstone","ForceDisabled":false}}},"HAuR_DD5N":{"GameName":"Rainbow Six Siege","Enabled":true,"CategoryStringID":"HAuR_DD5N","ForceDisabled":false,"Events":{"1":{"EventName":"Kill","Enabled":false,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"2K","Enabled":false,"GroupID":1,"EventID":2,"Icon":"icymiCrossbones","ForceDisabled":false},"3":{"EventName":"3K","Enabled":true,"GroupID":1,"EventID":3,"Icon":"icymiThreeSkulls","ForceDisabled":false},"4":{"EventName":"4K","Enabled":true,"GroupID":1,"EventID":4,"Icon":"icymiDeadSkull","ForceDisabled":false},"5":{"EventName":"Ace","Enabled":true,"GroupID":1,"EventID":5,"Icon":"icymiCrown","ForceDisabled":false},"6":{"EventName":"Death","Enabled":false,"EventID":6,"Icon":"icymiTombstone","ForceDisabled":false},"7":{"EventName":"DBNO","Enabled":false,"EventID":7,"Icon":"icymiSicle","ForceDisabled":false},"8":{"EventName":"Downed","Enabled":false,"EventID":8,"Icon":"icymiSleepFace","ForceDisabled":false},"9":{"EventName":"Revive","Enabled":false,"EventID":9,"Icon":"icymiPotion","ForceDisabled":false},"10":{"EventName":"Revived","Enabled":false,"EventID":10,"Icon":"icymiPotion","ForceDisabled":false},"11":{"EventName":"Plant Attempt (You)","Enabled":false,"GroupID":2,"EventID":11,"Icon":"icymiMushroomCloud","ForceDisabled":false},"12":{"EventName":"Planted (You)","Enabled":false,"GroupID":2,"EventID":12,"Icon":"icymiMushroomCloud","ForceDisabled":false},"13":{"EventName":"Planted (Any)","Enabled":false,"GroupID":2,"EventID":13,"Icon":"icymiMushroomCloud","ForceDisabled":false},"14":{"EventName":"Defused (Any)","Enabled":false,"EventID":14,"Icon":"icymiSiren","ForceDisabled":false}},"Groups":{"1":"All Kills","2":"All Plants"}},"1JsGrcAjjoZ":{"GameName":"Rematch","Enabled":true,"CategoryStringID":"1JsGrcAjjoZ","ForceDisabled":false,"Events":{"1":{"EventName":"Goal Scored","Enabled":true,"EventID":1,"Icon":"icymiFireball","ForceDisabled":false}}},"1HfH5qHqa1y":{"GameName":"REPO","Enabled":true,"CategoryStringID":"1HfH5qHqa1y","ForceDisabled":false,"Events":{"1":{"EventName":"Death","Enabled":true,"EventID":1,"Icon":"icymiSkull","ForceDisabled":false},"2":{"EventName":"Item Break","Enabled":true,"EventID":2,"Icon":"icymiExplosion","ForceDisabled":false}}},"1e2Ad6EOaE":{"GameName":"Roblox","Enabled":true,"CategoryStringID":"1e2Ad6EOaE","ForceDisabled":false,"Events":{"1":{"EventName":"Roblox Events","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"adufon9HW":{"GameName":"Rocket League","Enabled":true,"CategoryStringID":"adufon9HW","ForceDisabled":false,"Events":{"1":{"EventName":"High Five","Enabled":true,"EventID":1,"Icon":"icymiPeace","ForceDisabled":false},"2":{"EventName":"Epic Save","Enabled":false,"GroupID":2,"EventID":2,"Icon":"icymiSiren","ForceDisabled":false},"4":{"EventName":"Overtime Goal","Enabled":true,"GroupID":1,"EventID":4,"Icon":"icymiRocket","ForceDisabled":false},"5":{"EventName":"Aerial Goal","Enabled":false,"GroupID":1,"EventID":5,"Icon":"icymiParachute","ForceDisabled":false},"6":{"EventName":"Pool Shot","Enabled":true,"GroupID":1,"EventID":6,"Icon":"icymiMeteor","ForceDisabled":false},"7":{"EventName":"Demolish","Enabled":false,"EventID":7,"Icon":"icymiBomb","ForceDisabled":false},"8":{"EventName":"Backwards Goal","Enabled":false,"GroupID":1,"EventID":8,"Icon":"icymiExplosion2","ForceDisabled":false},"9":{"EventName":"Bicycle Goal","Enabled":false,"GroupID":1,"EventID":9,"Icon":"icymiFireball","ForceDisabled":false},"10":{"EventName":"Long Goal","Enabled":false,"GroupID":1,"EventID":10,"Icon":"icymiSights","ForceDisabled":false},"11":{"EventName":"Turtle Goal","Enabled":true,"GroupID":1,"EventID":11,"Icon":"icymiVikingHelmet","ForceDisabled":false},"12":{"EventName":"Assist","Enabled":false,"EventID":12,"Icon":"icymiFist","ForceDisabled":false},"13":{"EventName":"Hoops Swish Goal","Enabled":false,"GroupID":1,"EventID":13,"Icon":"icymiWing","ForceDisabled":false},"14":{"EventName":"Goal","Enabled":false,"GroupID":1,"EventID":14,"Icon":"icymiFireball","ForceDisabled":false},"15":{"EventName":"Save","Enabled":false,"GroupID":2,"EventID":15,"Icon":"icymiMedicalCross","ForceDisabled":false},"16":{"EventName":"Low Five","Enabled":false,"EventID":16,"Icon":"icymiPeace","ForceDisabled":false},"17":{"EventName":"Zero Second Goal","Enabled":true,"GroupID":1,"EventID":17,"Icon":"icymiStopwatch","ForceDisabled":false}},"Groups":{"1":"All Goals","2":"All Saves"}},"1JWwOyWC_fi":{"GameName":"Runescape: Dragonwilds","Enabled":true,"CategoryStringID":"1JWwOyWC_fi","ForceDisabled":false,"Events":{"1":{"EventName":"Player Died","Enabled":true,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false}}},"45IvaQ6UIQc":{"GameName":"Sol Mates","Enabled":true,"CategoryStringID":"45IvaQ6UIQc","ForceDisabled":false,"Events":{"1":{"EventName":"Knocked Out","Enabled":false,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Multi-kill","Enabled":false,"EventID":2,"Icon":"icymiThreeSkulls","ForceDisabled":false},"3":{"EventName":"Falling Overboard","Enabled":true,"EventID":3,"Icon":"icymiDeadSkull","ForceDisabled":false},"4":{"EventName":"Boss Battle Win","Enabled":true,"EventID":4,"Icon":"icymiFireball","ForceDisabled":false},"5":{"EventName":"Pet the Cat","Enabled":true,"EventID":5,"Icon":"icymiFist","ForceDisabled":false}}},"2aTbIjiixLV":{"GameName":"Steam Achievements","Enabled":true,"CategoryStringID":"2aTbIjiixLV","ForceDisabled":false,"Events":{"1":{"EventName":"All Achievements","Enabled":false,"EventID":1,"Icon":"icymiTrophy","ForceDisabled":false},"2":{"EventName":"Rare (10% completion rate)","Enabled":true,"EventID":2,"Icon":"icymiTrophy","ForceDisabled":false},"3":{"EventName":"Ultra Rare (5% completion rate)","Enabled":true,"EventID":3,"Icon":"icymiTrophy","ForceDisabled":false}}},"2KcRYLvxuMX":{"GameName":"Teenage Mutant Ninja Turtles: Splintered Fate","Enabled":true,"CategoryStringID":"2KcRYLvxuMX","ForceDisabled":false,"Events":{"1":{"EventName":"Boss Defeat","Enabled":true,"EventID":1,"Icon":"icymiFlag","ForceDisabled":false}}},"doKANxF1102":{"GameName":"V.A.U.L.T Protocol","Enabled":true,"CategoryStringID":"doKANxF1102","ForceDisabled":false,"Events":{"1":{"EventName":"Mine Triggered","Enabled":true,"EventID":1,"Icon":"icymiExplosion","ForceDisabled":false},"2":{"EventName":"Two for two","Enabled":true,"EventID":2,"Icon":"icymiCrossbones","ForceDisabled":false},"3":{"EventName":"Observer Sighting","Enabled":true,"EventID":3,"Icon":"icymiBinoculars","ForceDisabled":false},"4":{"EventName":"Summary Verdict","Enabled":true,"EventID":4,"Icon":"icymiFlag","ForceDisabled":false},"5":{"EventName":"Dice Backfire","Enabled":true,"EventID":5,"Icon":"icymiExplosion2","ForceDisabled":false},"6":{"EventName":"Friendly Fire Last Hit","Enabled":true,"EventID":6,"Icon":"icymiSkull","ForceDisabled":false},"7":{"EventName":"Killed by Creature","Enabled":true,"EventID":7,"Icon":"icymiDeadSkull","ForceDisabled":false},"8":{"EventName":"Mushroom Trap","Enabled":true,"EventID":8,"Icon":"icymiMushroomCloud","ForceDisabled":false},"9":{"EventName":"Megaphone Moment","Enabled":false,"EventID":9,"Icon":"icymiSiren","ForceDisabled":false},"10":{"EventName":"Cat Attack","Enabled":true,"EventID":10,"Icon":"icymiFist","ForceDisabled":false}}},"yhmatYtVhB":{"GameName":"Valheim","Enabled":true,"CategoryStringID":"yhmatYtVhB","ForceDisabled":false,"Events":{"1":{"EventName":"Player Death","Enabled":true,"EventID":1,"Icon":"icymiTombstone","ForceDisabled":false},"2":{"EventName":"First Time Boss Kill","Enabled":true,"EventID":2,"Icon":"icymiCrossbones","ForceDisabled":false},"3":{"EventName":"Mini Boss Loot","Enabled":true,"EventID":3,"Icon":"icymiVikingHelmet","ForceDisabled":false}}},"fW3AZxHf_c":{"GameName":"Valorant","Enabled":true,"CategoryStringID":"fW3AZxHf_c","ForceDisabled":false,"Events":{"1":{"EventName":"Kill","Enabled":false,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"2K","Enabled":false,"EventID":2,"Icon":"icymiCrossbones","ForceDisabled":false},"3":{"EventName":"3K","Enabled":true,"EventID":3,"Icon":"icymiThreeSkulls","ForceDisabled":false},"4":{"EventName":"4K","Enabled":true,"EventID":4,"Icon":"icymiSkull","ForceDisabled":false},"5":{"EventName":"Ace","Enabled":true,"EventID":5,"Icon":"icymiNotch","ForceDisabled":false},"6":{"EventName":"Death","Enabled":false,"EventID":6,"Icon":"icymiTombstone","ForceDisabled":false},"7":{"EventName":"Assist","Enabled":false,"EventID":7,"Icon":"icymiFist","ForceDisabled":false},"8":{"EventName":"Knife Kill","Enabled":true,"EventID":8,"Icon":"icymiKnife","ForceDisabled":false},"9":{"EventName":"First Blood","Enabled":false,"EventID":9,"Icon":"icymiSicle","ForceDisabled":false},"10":{"EventName":"Clutch","Enabled":true,"EventID":10,"Icon":"icymiBoxingGlove","ForceDisabled":false},"11":{"EventName":"Thrifty","Enabled":true,"EventID":11,"Icon":"icymiMoneyBag","ForceDisabled":false},"12":{"EventName":"Flawless","Enabled":false,"EventID":12,"Icon":"icymiDiamond","ForceDisabled":false}}},"1FBXjDOK9a":{"GameName":"War Thunder","Enabled":true,"CategoryStringID":"1FBXjDOK9a","ForceDisabled":false,"Events":{"1":{"EventName":"Plane Kill","Enabled":true,"GroupID":1,"EventID":1,"Icon":"icymiDeadSkull","ForceDisabled":false},"2":{"EventName":"Tank Kill","Enabled":true,"GroupID":2,"EventID":2,"Icon":"icymiDeadSkull","ForceDisabled":false},"3":{"EventName":"Ship Kill","Enabled":true,"GroupID":3,"EventID":3,"Icon":"icymiDeadSkull","ForceDisabled":false},"4":{"EventName":"Plane Crash","Enabled":false,"GroupID":1,"EventID":4,"Icon":"icymiExplosion","ForceDisabled":false},"5":{"EventName":"Ship Crash","Enabled":false,"GroupID":3,"EventID":5,"Icon":"icymiExplosion","ForceDisabled":false},"6":{"EventName":"Plane Death","Enabled":false,"GroupID":1,"EventID":6,"Icon":"icymiSkull","ForceDisabled":false},"7":{"EventName":"Tank Death","Enabled":false,"GroupID":2,"EventID":7,"Icon":"icymiSkull","ForceDisabled":false},"8":{"EventName":"Ship Death","Enabled":false,"GroupID":3,"EventID":8,"Icon":"icymiSkull","ForceDisabled":false}},"Groups":{"1":"Plane","2":"Tank","3":"Ship"}},"21OKfsPNf8h":{"GameName":"Whisk","Enabled":true,"CategoryStringID":"21OKfsPNf8h","ForceDisabled":false,"Events":{"1":{"EventName":"Stage Completion (New Best)","Enabled":true,"EventID":1,"Icon":"icymiCrown","ForceDisabled":false},"2":{"EventName":"Other Stage Completions","Enabled":false,"EventID":2,"Icon":"icymiCrown","ForceDisabled":false},"3":{"EventName":"Dream Cat Lost","Enabled":false,"EventID":3,"Icon":"icymiDeadSkull","ForceDisabled":false},"4":{"EventName":"Character Fall","Enabled":false,"EventID":4,"Icon":"icymiTombstone","ForceDisabled":false}}},"1T4SFvd94FA":{"GameName":"YAPYAP","Enabled":true,"CategoryStringID":"1T4SFvd94FA","ForceDisabled":false,"Events":{"1":{"EventName":"Deaths","Enabled":true,"EventID":1,"Icon":"","ForceDisabled":false}}},"1KyRdCKVT35":{"GameName":"ZeroSpace","Enabled":true,"CategoryStringID":"1KyRdCKVT35","ForceDisabled":false,"Events":{"1":{"EventName":"Victory","Enabled":false,"EventID":1,"Icon":"icymiFlag","ForceDisabled":false},"2":{"EventName":"Defeat","Enabled":false,"EventID":2,"Icon":"icymiF","ForceDisabled":false},"3":{"EventName":"Hero Takedown","Enabled":true,"EventID":3,"Icon":"icymiCrossbones","ForceDisabled":false},"4":{"EventName":"Hero Lost","Enabled":false,"EventID":4,"Icon":"icymiDeadSkull","ForceDisabled":false},"5":{"EventName":"Base Razed","Enabled":true,"EventID":5,"Icon":"icymiExplosion","ForceDisabled":false},"6":{"EventName":"Massacre","Enabled":true,"EventID":6,"Icon":"icymiThreeSkulls","ForceDisabled":false},"7":{"EventName":"Emperor Summoned","Enabled":true,"EventID":7,"Icon":"icymiMagicSmoke","ForceDisabled":false},"8":{"EventName":"Sol Invictus Down","Enabled":true,"EventID":8,"Icon":"icymiCrown","ForceDisabled":false}}}},"categoryId":null},{"key":"RobloxAutoClipBlacklist","value":[],"categoryId":null},{"key":"MinecraftAutoClipBlacklist","value":[],"categoryId":null},{"key":"GTAAutoClipBlacklist","value":[],"categoryId":null},{"key":"SteamAchievementsAutoClipBlacklist","value":[],"categoryId":null},{"key":"InMemoryBuffer","value":true,"categoryId":null},{"key":"MicEnabled","value":true,"categoryId":null},{"key":"MicNoiseGateEnabled","value":false,"categoryId":null},{"key":"MicNoiseGateThreshold","value":-100,"categoryId":null},{"key":"MicNoiseSuppressionEnabled","value":false,"categoryId":null},{"key":"MicSoundGain","value":0.5,"categoryId":null},{"key":"MonitorDeviceName","value":null,"categoryId":null},{"key":"MonoMicAudio","value":false,"categoryId":null},{"key":"MultipleAudioTracks","value":true,"categoryId":null},{"key":"PassiveGameSwitchEnabled","value":true,"categoryId":null},{"key":"PreferGameCapture","value":true,"categoryId":null},{"key":"PushToTalkEnabled","value":false,"categoryId":null},{"key":"RecordingEnabled","value":true,"categoryId":null},{"key":"Resolution","value":{"width":1920,"height":1080},"categoryId":null},{"key":"SDKMode","value":false,"categoryId":null},{"key":"SelectedAudioDevices","value":["Auto"],"categoryId":null},{"key":"SelectedGPUDevice","value":"AMD Radeon RX 5600 OEM","categoryId":null},{"key":"SelectedMicDevice","value":"Auto","categoryId":null},{"key":"ShowCursor","value":false,"categoryId":null},{"key":"ShowOverlay","value":true,"categoryId":null},{"key":"TargetFPS","value":60,"categoryId":null},{"key":"VoiceClippingEnabled","value":false,"categoryId":null},{"key":"VoiceClippingAssistantNames","value":["Medal"],"categoryId":null},{"key":"VoiceCommandsActiveConfig","value":{"commands":[]},"categoryId":null},{"key":"VideoOverlayConfig","value":[],"categoryId":null}]
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Audio Mode Configuration changed from {"type":"splitByProcess","sources":[{"id":"game-audio","enabled":true,"volume":100},{"id":"MedalEncoder.exe","enabled":true,"volume":100},{"id":"Discord.exe","enabled":true,"volume":100}],"devices":null,"volume":50,"pcAudioEnabled":false} --> {"type":"splitByProcess","sources":[{"id":"game-audio","enabled":true,"volume":100},{"id":"MedalEncoder.exe","enabled":true,"volume":100},{"id":"Discord.exe","enabled":true,"volume":100}],"devices":null,"volume":50,"pcAudioEnabled":false}
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Auto Clipping Sound Alerts changed from True --> False
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Clip Sound Path changed from  --> <null>
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Hotkeys changed from [clip: short_press of keyboard:F8] --> [clip;length=20: short_press of keyboard:F8, segment_toggle: short_press of keyboard:ALT + F7, bookmark: short_press of keyboard:F8, switch_game: short_press of keyboard:F10, screenshot: short_press of keyboard:F7]
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Hotkeys changed from [clip: short_press of keyboard:F8] --> [clip;length=20: short_press of keyboard:F8, segment_toggle: short_press of keyboard:ALT + F7, bookmark: short_press of keyboard:F8, switch_game: short_press of keyboard:F10, screenshot: short_press of keyboard:F7]
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: ICYMI Enabled changed from False --> True
+[Debug | 6:59:49 PM | 7] Settings [scope:various]: ICYMI Event Settings changed (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35)
+[Debug | 6:59:49 PM | 1] 1 logs of- Settings [scope:various]: ICYMI Event Settings changed (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35)
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Mic Enabled changed from False --> True
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Mic Noise Gate Threshold changed from -30 --> -100
+[Info | 6:59:49 PM | 7] Empty monitor device name, using primary monitor \\.\DISPLAY1
+[Debug | 6:59:49 PM | 7] Settings [scope:<global>]: Monitor Device Name changed from  --> \\.\DISPLAY1
+[Info | 6:59:49 PM | 1] Empty monitor device name, using primary monitor \\.\DISPLAY1
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Monitor Device Name changed from  --> \\.\DISPLAY1
+[Debug | 6:59:49 PM | 1] Settings [scope:<global>]: Resolution changed from {Width=1280, Height=720} --> {Width=1920, Height=1080}
+[Debug | 6:59:49 PM | 17] 1 logs of- Settings [scope:<global>]: Resolution changed from {Width=1280, Height=720} --> {Width=1920, Height=1080}
+[Warning | 6:59:49 PM | 17] Process tracker WMI start failed (access denied)
+[Debug | 6:59:49 PM | 14] [Scope] [18:59:49.896666] [001F80] DXDeviceManager created DXDevice for adapter AMD Radeon RX 5600 OEM (LUID 37223) with usage 0
+[Debug | 6:59:49 PM | 17] ProcessTracker using polling backend (interval: 5.0s)
+[Info | 6:59:49 PM | 17] GameDB: C:\Users\uliss\AppData\Local\Medal\recorder-2642.2986.1\MedalGameInfo.db
+[Debug | 6:59:49 PM | 3] Checking window: Roblox (524714, WINDOWSCLIENT)
+[Debug | 6:59:49 PM | 3] Checking window under process RobloxPlayerBeta against 1 games with LTs 1
+[Info | 6:59:49 PM | 17] Updated hotkeys for (none), now have 5 hotkeys configured
+[Info | 6:59:49 PM | 4] Updated hotkeys for (none), now have 5 hotkeys configured
+[Info | 6:59:49 PM | 3] Game Found Type ProcessClass: Roblox
+[Info | 6:59:49 PM | 3] Process name found RobloxPlayerBeta | Caption | Roblox | and class | WINDOWSCLIENT | Detect all Games | False
+[Info | 6:59:50 PM | 3] Adding game to active games. State: 0 0 0
+[Info | 6:59:50 PM | 3] Creating Target process
+[Info | 6:59:50 PM | 3] Checking if game process is elevated
+[Info | 6:59:50 PM | 3] Setting up window hooks for game window
+[Debug | 6:59:50 PM | 24] Window thread message loop starting: Window Hooks for Window[524714, 1e2Ad6EOaE[Roblox], WINDOWSCLIENT, RobloxPlayerBeta[12448]]
+[Warning | 6:59:50 PM | 14] [Scope] [18:59:50.037249] [001F80] [AMF] EncodeCore: 2026-10-16 18:59:50.036     1F80 [EncodeCore]   Error: c:\constructicon\builds\gfx\one\25.10\drivers\enc_core\cmn\av1config.cpp(250):Av1Config::IsEncodeSupported(): Unknown Hardware!
+
+[Info | 6:59:50 PM | 24] Set up window hooks for window handle 524714
+[Info | 6:59:50 PM | 3] Registering target
+[Warning | 6:59:50 PM | 14] [Scope] [18:59:50.090096] [001F80] [AMF] EncodeCore: 2026-10-16 18:59:50.088     1F80 [EncodeCore]   Error: c:\constructicon\builds\gfx\one\25.10\drivers\enc_core\cmn\av1config.cpp(250):Av1Config::IsEncodeSupported(): Unknown Hardware!
+
+[Debug | 6:59:50 PM | 3] Initialized customization for 1e2Ad6EOaE (Roblox)
+[Info | 6:59:50 PM | 3] Added game to active games
+[Info | 6:59:50 PM | 3] Using electron overlay.
+[Info | 6:59:50 PM | 3] [GameState] Contexts updated to [CATEGORY:1e2Ad6EOaE], resending game state to backend.
+[Info | 6:59:50 PM | 3] [GameState] Category 1e2Ad6EOaE added.
+[Info | 6:59:50 PM | 3] Marking new game window as checked for tracking
+[Info | 6:59:50 PM | 18] [GameState] Session ID generated: 33c14180-85e8-418f-8941-ddfe6a2b56e4
+[Debug | 6:59:50 PM | 8] Going to switch to new game info DB from C:\Users\uliss\AppData\Local\Medal\recorder-2642.2986.1\MedalGameInfo.db
+[Debug | 6:59:50 PM | 8] Acquired game info DB write lock
+[Debug | 6:59:50 PM | 8] Successfully switched to new game info DB
+[Debug | 6:59:50 PM | 8] Released game info DB write lock
+[Info | 6:59:50 PM | 8] Game database updated. Version: {"Version":"2.2131","Command":"none","Environment":"production"}
+[Info | 6:59:50 PM | 8] GameDB: C:\Users\uliss\AppData\Local\Medal\recorder-2642.2986.1\MedalGameInfo.db
+[Info | 6:59:50 PM | 8] Initial game DB update check: update attempted and succeeded
+[Debug | 6:59:50 PM | 7] Settings [scope:<global>]: Selected GPU Device changed from Auto --> AMD Radeon RX 5600 OEM
+[Debug | 6:59:50 PM | 1] Settings [scope:<global>]: Selected GPU Device changed from Auto --> AMD Radeon RX 5600 OEM
+[Debug | 6:59:50 PM | 1] Settings [scope:<global>]: Target FPS changed from 30 --> 60
+[Debug | 6:59:50 PM | 7] Settings [scope:<global>]: Target FPS changed from 30 --> 60
+[Info | 6:59:50 PM | 1] Current disk space 343403737088, min disk space requirement 1192000000
+[Info | 6:59:50 PM | 1] [ESM Event] - ConfigChanged
+[Info | 6:59:50 PM | 7] [ESM Event] - ConfigChanged
+[Debug | 6:59:50 PM | 7] Config change: MaxClipDuration (<global> + 23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35), VideoCaptureProperties (<global>), VideoOutputResolution (<global>), VideoEncoderProperties (<global>), AudioProcessorProperties (<global>), AudioOutputLayout (<global>), ScreenRecordingMonitor (<global>), ICYMIEventSettings (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35)
+[Debug | 6:59:50 PM | 1] Config change: MaxClipDuration (<global> + 23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35), VideoCaptureProperties (<global>), VideoOutputResolution (<global>), VideoEncoderProperties (<global>), AudioInputLayout (<global>), AudioProcessorProperties (<global>), AudioOutputLayout (<global>), ScreenRecordingMonitor (<global>), ICYMIEventSettings (<global> + 23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35)
+[Info | 6:59:50 PM | 1] Found 1 adapters:
+[Info | 6:59:50 PM | 7] Windows Game Mode disabled.
+[Info | 6:59:50 PM | 1]     37223: AMD Radeon RX 5600 OEM (1002:731F), VRAM: 6103 MiB, codecs: H.264 (BGRA32 @ 128x128-4096x4096), H.265 (BGRA32 @ 128x128-4096x4096)
+[Info | 6:59:50 PM | 1] Supported video encoder options: AMD Radeon RX 5600 OEM
+[Info | 6:59:50 PM | 1] Completed hardware encoder detection, found 1 hardware encoder options
+[Info | 6:59:50 PM | 1] [WSRequests] Sending KV encoderOptions + System.String[]
+[Info | 6:59:50 PM | 1] [Settings] Custom game settings received: []
+[Info | 6:59:50 PM | 1] Initial app settings - Advanced Window Capture is False - Aspect Ratio is Custom - Auth Key is <hidden> - Bitrate is 15 - Clip Folder is C:\Users\uliss\Videos\Medal\ - Codec is H265 - Detect All Games is False - Development Mode Enabled is False - Discord Audio Enabled is False - Encoder is GPU - Environment is production - Experimental Capture is False - External File Sources is {"folders":[]} - Force Window Capture is False - Full Session Mode Enabled is False - Game Audio Only Enabled is False - Game Controls Collection Enabled is True - Profile Recommendation Services Enabled is True - Clip Saved Sound Alerts is True - Bookmark Saved Sound Alerts is True - Session Toggle Sound Alerts is True - Auto Clipping Sound Alerts is False - Disk Full Sound Alerts is True - Screenshot Sound Alerts is True - Global Sound Alerts is True - Clip Sound is default - Clip Sound Path is <null> - Audio Notification Volume is 1 - HDR Compatibility is False - Hotkeys is [clip;length=20: short_press of keyboard:F8, segment_toggle: short_press of keyboard:ALT + F7, bookmark: short_press of keyboard:F8, switch_game: short_press of keyboard:F10, screenshot: short_press of keyboard:F7] - ICYMI Enabled is True - ICYMI Event Settings is <hidden> - In Memory Buffer is True - Keyboard Mouse Overlay Enabled is False - Keyboard Mouse Overlay Position is 2 - Keyboard Mouse Overlay Layout is qwerty_truncated - Manual Recording Enabled is False - Mic Enabled is True - Mic Noise Gate Enabled is False - Mic Noise Gate Threshold is -100 - Mic Noise Suppression Enabled is False - Mic Sound Gain is 0.5 - Monitor Device Name is \\.\DISPLAY1 - Mono Mic Audio is False - Multiple Audio Tracks is True - Audio Mode Configuration is {"type":"splitByProcess","sources":[{"id":"game-audio","enabled":true,"volume":100},{"id":"MedalEncoder.exe","enabled":true,"volume":100},{"id":"Discord.exe","enabled":true,"volume":100}],"devices":null,"volume":50,"pcAudioEnabled":false} - Passive Game Switching Enabled is True - Prefer Game Capture is True - Push To Talk Enabled is False - Recording Enabled is True - Resolution is {Width=1920, Height=1080} - Screen Capture Enabled is False - SDK Mode Enabled is False - Selected Audio Devices is [Auto] - Selected GPU Device is AMD Radeon RX 5600 OEM - Selected Mic Device is Auto - Selected Webcam Device is {"id":"<None>","label":"<None>","value":"<None>","type":"<None>"} - Show Cursor is False - Show Overlay is True - Target FPS is 60 - Framerate Mode is SCOPE_VID_FPS_MODE_VFR - User ID is 499561012 - Username is ulxzs - Video Overlay Config is [] - Voice Clipping Enabled is False - Voice Clipping Assistant Names is [Medal] - Roblox Auto Clip Blacklist is [] - Minecraft Auto Clip Blacklist is [] - GTA Auto Clip Blacklist is [] - Steam Achievements Auto Clip Blacklist is [] - Voice Commands Active Config is [] voskModelPath='' - Webcam Overlay Enabled is False - Webcam Overlay Position is 1
+[Info | 6:59:50 PM | 1] Set process priority to High
+[Info | 6:59:50 PM | 1] Starting InputManager.
+[Info | 6:59:50 PM | 1] Check for input devices
+[Debug | 6:59:50 PM | 14] [Scope] [18:59:50.889823] [004040] pipeline starting to process user actions
+[Info | 6:59:50 PM | 1] [InputManager] SDL controller tracking enabled
+[Info | 6:59:50 PM | 1] InputManager started.
+[Debug | 6:59:50 PM | 25] [SDL] EventLoop thread started (thread=25), initializing SDL
+[Debug | 6:59:50 PM | 27] Window thread message loop starting: InputManager
+[Debug | 6:59:50 PM | 14] [Scope] [18:59:50.907813] [00404C] starting pipeline
+[Debug | 6:59:50 PM | 14] [Scope] [18:59:50.930998] [00404C] started raw input capture backend
+[Debug | 6:59:50 PM | 14] [Scope] [18:59:50.931048] [00404C] all pipeline components started
+[Debug | 6:59:50 PM | 14] [Scope] [18:59:50.931055] [00404C] started input capture
+[Debug | 6:59:50 PM | 14] [Scope] [18:59:50.931056] [00404C] pipeline start issued
+[Info | 6:59:50 PM | 26] InputManager: regenerating trigger inputs for Roblox
+[Info | 6:59:50 PM | 26] Updated hotkeys for Roblox, now have 5 hotkeys configured
+[Info | 6:59:50 PM | 1] Found 1 adapters:
+[Info | 6:59:50 PM | 1]     37223: AMD Radeon RX 5600 OEM (1002:731F), VRAM: 6103 MiB, codecs: H.264 (BGRA32 @ 128x128-4096x4096), H.265 (BGRA32 @ 128x128-4096x4096)
+[Info | 6:59:50 PM | 1] Supported video encoder options: AMD Radeon RX 5600 OEM
+[Info | 6:59:50 PM | 1] Completed hardware encoder detection, found 1 hardware encoder options
+[Info | 6:59:50 PM | 1] [WSRequests] Sending KV gpuDevices + System.Collections.Generic.List`1[System.String]
+[Info | 6:59:50 PM | 1] [WSRequests] Sending KV gpuCodecs + System.Collections.Generic.Dictionary`2[System.String,System.String[]]
+[Info | 6:59:50 PM | 26] [SDL Recorder] Capture DISABLED (gameTarget=True, focused=False)
+[Debug | 6:59:50 PM | 26] [TargetWindow] Required buffer for ICYMI detection type RealTime is 00:02:00
+[Info | 6:59:50 PM | 1] NVProfile: NVAPI dll not found.
+[Debug | 6:59:50 PM | 26] [TargetWindow] Required buffer for user settings is 00:00:20
+[Info | 6:59:50 PM | 26] [SDL Recorder] Resized controller event ring capacity=130000
+[Info | 6:59:50 PM | 1] GPUPreference: no existing preference found
+[Debug | 6:59:51 PM | 25] [SDL] SDL initialized, opening existing joysticks
+[Debug | 6:59:51 PM | 25] [SDL] Entering event loop
+[Info | 6:59:51 PM | 1] GPUPreference: current preference 0 is OK, continuing
+[Info | 6:59:51 PM | 1] Performing MPO capability checks. IsForceDisabled: False
+[Info | 6:59:51 PM | 1]   Adapter: AMD Radeon RX 5600 OEM (Vendor 0x1002, Device 0x731F)
+[Info | 6:59:51 PM | 1]     Output 0: \\.\DISPLAY1 1920x1080 at (0,0) | SupportsOverlays: False | Formats: R10G10B10A2_UNorm | Planes (total/RGB/YUV): 2/1/0 | ColorSpace: RgbFullG22NoneP709
+[Debug | 6:59:51 PM | 1] OpenGL present mode not set
+[Info | 6:59:51 PM | 1] Initializing Electron overlay
+[Debug | 6:59:51 PM | 1] HookLibraryManager cleaned up 0 old hook DLLs, leaving 0
+[Info | 6:59:51 PM | 1] Removed existing Vulkan registry info [C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134360495994859226\medal-vulkan64.json]
+[Info | 6:59:51 PM | 1] Removed existing Vulkan registry info [C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134360495994859226\medal-vulkan32.json]
+[Info | 6:59:51 PM | 1] [MedalEncoder.Recording.HookLibraryManager] Set security permissions for C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134366615911570165\medal-hook32.dll
+[Info | 6:59:51 PM | 1] [MedalEncoder.Recording.HookLibraryManager] Set security permissions for C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134366615911570165\medal-hook64.dll
+[Info | 6:59:51 PM | 1] [MedalEncoder.Recording.HookLibraryManager] Set security permissions for C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134366615911570165\medal-vulkan32.json
+[Info | 6:59:51 PM | 1] [MedalEncoder.Recording.HookLibraryManager] Set security permissions for C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134366615911570165\medal-vulkan64.json
+[Debug | 6:59:51 PM | 1] Copied hook files for Vulkan support
+[Info | 6:59:51 PM | 1] Updated Vulkan registry info [C:\Users\uliss\AppData\Local\Medal\HookDLL\MedalHook_Vulkan_134366615911570165]
+[Debug | 6:59:51 PM | 1] [OpenXR Layer] OpenXR tracking disabled, removed layer registration
+[Info | 6:59:51 PM | 1] [StatsApiUtils] DefaultStatsAPI.ini not found, skipping configuration.
+[Warning | 6:59:51 PM | 1] [Dota2] Game Library Base Path is null -- cannot write GSI file.
+[Warning | 6:59:51 PM | 1] [CounterStrike2] Game Library Base Path is null -- cannot write GSI file.
+[Info | 6:59:51 PM | 1] [GameState] Timer started
+[Info | 6:59:51 PM | 1] [GameState] Contexts updated to [CATEGORY:1e2Ad6EOaE], resending game state to backend.
+[Info | 6:59:51 PM | 1] [DiscordVoiceChatListener] Initialized voice chat state from log: disconnected
+[Info | 6:59:51 PM | 1] Started monitoring log file at C:\Users\uliss\AppData\Roaming\discord\logs\renderer_js.log
+[Info | 6:59:51 PM | 1] Incremental mode detected: starting from end of log file
+[Info | 6:59:51 PM | 1] Started monitoring log file at C:\Users\uliss\AppData\Roaming\discord\logs\discord_hook.log
+[Info | 6:59:51 PM | 1] [DiscordVoiceChatService] Started Discord voice chat monitoring
+[Info | 6:59:51 PM | 1] System supports GAO / process capture audio
+[Info | 6:59:51 PM | 1] Setting up external recorders
+[Info | 6:59:51 PM | 18] Memory-mapped file does not exist.
+[Info | 6:59:51 PM | 18] Config file not found at C:\Users\uliss\AppData\Local\NVIDIA Corporation\NvNode\nodejs.json
+[Info | 6:59:51 PM | 18] Config file does not exist
+[Info | 6:59:51 PM | 1] TPGame API started at http://localhost:12665
+[Info | 6:59:51 PM | 30] Event queue processing has started.
+[Info | 6:59:51 PM | 18] Event queue health check has started.
+[Info | 6:59:51 PM | 1] ----[ESM State]: SelectTarget----
+[Info | 6:59:51 PM | 1] [ESM Event] - ConsiderSwitchRecording
+[Debug | 6:59:51 PM | 30] [EventProcessor] [->] ConsiderSwitchRecording
+[Info | 6:59:51 PM | 30] [SelectTarget] Considering switching target while idle (SystemInitiated, category: <none>, process: <none>)
+[Debug | 6:59:51 PM | 30] Considering recording with 0 hint targets and 0 avoid targets
+[Debug | 6:59:51 PM | 30] ~ Window[524714, 1e2Ad6EOaE[Roblox], WINDOWSCLIENT, "Roblox", [-8,-8 + 1936x1048], RobloxPlayerBeta[12448]]
+[Debug | 6:59:51 PM | 30] ~     Score: 62984 (PreferredType)
+[Debug | 6:59:51 PM | 30] Selected target Window[524714, 1e2Ad6EOaE[Roblox], WINDOWSCLIENT, "Roblox", [-8,-8 + 1936x1048], RobloxPlayerBeta[12448]] (score 62984)
+[Info | 6:59:51 PM | 30] Going to attempt recording Window[524714, 1e2Ad6EOaE[Roblox], WINDOWSCLIENT, "Roblox", [-8,-8 + 1936x1048], RobloxPlayerBeta[12448]]
+[Info | 6:59:51 PM | 30] [ESM Event] - AttemptRecording
+[Debug | 6:59:51 PM | 30] [EventProcessor] [<-] ConsiderSwitchRecording ElapsedTime: 29ms
+[Debug | 6:59:51 PM | 30] [EventProcessor] [->] AttemptRecording
+[Info | 6:59:51 PM | 30] ----[ESM State]: AttemptRecording----
+[Debug | 6:59:51 PM | 14] [Scope] [18:59:51.791738] [004124] WinRT borderless support check: requested, allowed (4)
+[Info | 6:59:51 PM | 30] [ESM Event] - StartRecording
+[Debug | 6:59:51 PM | 30] [EventProcessor] [<-] AttemptRecording ElapsedTime: 42ms
+[Debug | 6:59:51 PM | 30] [EventProcessor] [->] StartRecording
+[Info | 6:59:51 PM | 30] ----[ESM State]: Recording----
+[Debug | 6:59:51 PM | 30] [TargetWindow] Required buffer for ICYMI detection type RealTime is 00:02:00
+[Debug | 6:59:51 PM | 30] [TargetWindow] Required buffer for user settings is 00:00:20
+[Debug | 6:59:51 PM | 30] Creating recording session for Window[524714, 1e2Ad6EOaE[Roblox], WINDOWSCLIENT, "Roblox", [-8,-8 + 1936x1048], RobloxPlayerBeta[12448]] using capture mode Window/WINRT Attempts: 1
+[Info | 6:59:51 PM | 1] Started monitoring log file at C:\Program Files (x86)\Steam\logs\steamui_librarycache.txt
+[Debug | 6:59:51 PM | 30] CreateConfig: using main LUID 37223, encode LUID 37223, codec SCOPE_VID_CODEC_H265 usage SCOPE_VENC_USAGE_REALTIME
+[Debug | 6:59:51 PM | 30] Using RC mode SCOPE_VENC_RC_MODE_CBR with nominal bitrate of 15000000bps
+[Debug | 6:59:51 PM | 30] COR: input resolution <= output resolution (1936x1048 vs 1995x1080), not upscaling
+[Info | 6:59:51 PM | 30] Input resolution: 1936x1048
+[Info | 6:59:51 PM | 30] Output resolution: 1936x1048
+[Debug | 6:59:51 PM | 7] [AutoClipCatalog] Read auto clip configuration for 42 games from games DB 2.2131
+[Info | 6:59:51 PM | 30] Using splitByProcess audio mode with 3 sources
+[Debug | 6:59:51 PM | 14] [Scope] [18:59:51.866425] [004124] WASAPI capture device enum: found 1 devices, default: Microfone (fifine Headset) ({0.0.1.00000000}.{f23fc042-ea5a-49bf-b88c-8b3db9815d37})
+[Debug | 6:59:51 PM | 30] Added game audio stream at index 0 (PID: 12448)
+[Debug | 6:59:51 PM | 30] Adding GAO input of type Other for MedalEncoder[2960]
+[Debug | 6:59:51 PM | 30] Adding GAO input of type Other for Discord[7512]
+[Debug | 6:59:51 PM | 14] [Scope] [18:59:51.877314] [004124] WASAPI capture device enum: found 1 devices, default: Microfone (fifine Headset) ({0.0.1.00000000}.{f23fc042-ea5a-49bf-b88c-8b3db9815d37})
+[Debug | 6:59:51 PM | 17] Settings [scope:various]: ICYMI Event Settings changed (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35 + 1IJGmlRF3HI + 26D5hV0gTqu + 5FsRVgww4b + RB-1hJHjsI + 2H1yPNnaVS + fLk_vTAVwP2 + gnmBjz_euQE + eAab0vVm_d4 + 1PwhuhJlTFq + ilQu88KHf-J + BgNo7im9Fcf + UEqc2b6NTQ + hMpO160xhTi)
+[Info | 6:59:51 PM | 17] [ESM Event] - ConfigChanged
+[Debug | 6:59:51 PM | 17] Config change: MaxClipDuration (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35 + 1IJGmlRF3HI + 26D5hV0gTqu + 5FsRVgww4b + RB-1hJHjsI + 2H1yPNnaVS + fLk_vTAVwP2 + gnmBjz_euQE + eAab0vVm_d4 + 1PwhuhJlTFq + ilQu88KHf-J + BgNo7im9Fcf + UEqc2b6NTQ + hMpO160xhTi), ICYMIEventSettings (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35 + 1IJGmlRF3HI + 26D5hV0gTqu + 5FsRVgww4b + RB-1hJHjsI + 2H1yPNnaVS + fLk_vTAVwP2 + gnmBjz_euQE + eAab0vVm_d4 + 1PwhuhJlTFq + ilQu88KHf-J + BgNo7im9Fcf + UEqc2b6NTQ + hMpO160xhTi)
+[Debug | 6:59:51 PM | 17] [TargetWindow] Required buffer for ICYMI detection type RealTime is 00:02:00
+[Debug | 6:59:51 PM | 17] [TargetWindow] Required buffer for user settings is 00:00:20
+[Info | 6:59:51 PM | 30] Added active microphone stream at index 3 (Microfone (fifine Headset))
+[Info | 6:59:51 PM | 30] Created output track 'RobloxPlayerBeta' (source: game-audio) from 1 input stream(s) starting at 0 with volume 100%
+[Info | 6:59:51 PM | 30] Created output track 'MedalEncoder' (source: MedalEncoder.exe) from 1 input stream(s) starting at 1 with volume 100%
+[Info | 6:59:51 PM | 30] Created output track 'Discord' (source: Discord.exe) from 1 input stream(s) starting at 2 with volume 100%
+[Info | 6:59:51 PM | 30] Created output track 'Microphone' from input stream 3
+[Info | 6:59:51 PM | 30] splitByProcess audio mode configured: 4 input streams, 5 output tracks
+[Info | 6:59:51 PM | 30] RecordingSession using window capture: window 524714 using mode SCOPE_VCAP_WINDOW_MODE_WINRT
+[Debug | 6:59:51 PM | 14] [Scope] [18:59:51.912002] [004128] pipeline starting to process user actions
+[Info | 6:59:51 PM | 30] Pipeline using VFR video stabiliser
+[Debug | 6:59:51 PM | 14] [Scope] [18:59:51.949919] [004124] AMF encoder initialised with Latest backend (AMF 1.4.30.0, driver AMF 1.4.37.0)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.013606] [004124] WASAPI loopback device enum: found 3 devices, default: Alto-falantes (fifine Headset) ({0.0.0.00000000}.{0f25047f-493d-467f-a13b-dbd9c7c5d4fa})
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.015653] [004124] WASAPI capture device enum: found 1 devices, default: Microfone (fifine Headset) ({0.0.1.00000000}.{f23fc042-ea5a-49bf-b88c-8b3db9815d37})
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.017974] [001C08] created WASAPI capture for PID 12448; loopback using WASAPI events
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.018024] [004124] WASAPI process capture for PID 12448 using assumed capture period of 10.000ms
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.018033] [004124]     format: Wave (PCM, float, 32-bit, interleaved), 8 channels, 48000Hz
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.021791] [001C08] created WASAPI capture for PID 2960; loopback using WASAPI events
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.021801] [004124] WASAPI process capture for PID 2960 using assumed capture period of 10.000ms
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.021805] [004124]     format: Wave (PCM, float, 32-bit, interleaved), 8 channels, 48000Hz
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.022103] [001C08] created WASAPI capture for PID 7512; loopback using WASAPI events
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.022112] [004124] WASAPI process capture for PID 7512 using assumed capture period of 10.000ms
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.022114] [004124]     format: Wave (PCM, float, 32-bit, interleaved), 8 channels, 48000Hz
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.025113] [004124] WASAPI capture device enum: found 1 devices, default: Microfone (fifine Headset) ({0.0.1.00000000}.{f23fc042-ea5a-49bf-b88c-8b3db9815d37})
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.025185] [004124] creating WASAPI capture for device Microfone (fifine Headset); capture aiming to use WASAPI events
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.025663] [004124] WASAPI device capture for Microfone (fifine Headset) trying format Wave (PCM, float, 32-bit, interleaved), 48000Hz, 2ch
+[Warning | 6:59:52 PM | 8] Setting not found: JWT
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.154723] [004124] created WASAPI capture for device Microfone (fifine Headset); capture client using WASAPI events
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.155592] [004124] WASAPI device capture for Microfone (fifine Headset) using retrieved capture period of 10.000ms
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.155602] [004124]     format: Wave (PCM, float, 32-bit, interleaved), 2 channels, 48000Hz
+[Info | 6:59:52 PM | 30] Starting Medal Performance monitor.
+[Debug | 6:59:52 PM | 30] [TargetWindow] Required buffer for ICYMI detection type RealTime is 00:02:00
+[Debug | 6:59:52 PM | 30] [TargetWindow] Required buffer for user settings is 00:00:20
+[Info | 6:59:52 PM | 30] Output modes: ClipOutput
+[Debug | 6:59:52 PM | 30] [EventProcessor] [<-] StartRecording ElapsedTime: 398ms
+[Debug | 6:59:52 PM | 30] [EventProcessor] [->] ConfigChanged
+[Debug | 6:59:52 PM | 30] Handling config change while recording: MaxClipDuration (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35 + 1IJGmlRF3HI + 26D5hV0gTqu + 5FsRVgww4b + RB-1hJHjsI + 2H1yPNnaVS + fLk_vTAVwP2 + gnmBjz_euQE + eAab0vVm_d4 + 1PwhuhJlTFq + ilQu88KHf-J + BgNo7im9Fcf + UEqc2b6NTQ + hMpO160xhTi), ICYMIEventSettings (23F-rzvT_Wq + 31sDPVvnKB + 1yiAFx4tcmo + 1giLEcuGln2 + 1MC_BVn3W7R + f-7RbbhET + fah-qzqo6No + 3C6RvNAImg + dt7WA3OzKNM + 1HkRV7MERT + 10cJzcPADb + 1zecpLn85O7 + r-K7qepLC + 1GiXcAXZ7Ty + bQnfO2HXP + hAXdelx2t + 17TfcRrk82u + F6MuXa5mt + HAuR_DD5N + 1JsGrcAjjoZ + 1HfH5qHqa1y + 1e2Ad6EOaE + adufon9HW + 1JWwOyWC_fi + 45IvaQ6UIQc + 2aTbIjiixLV + 2KcRYLvxuMX + doKANxF1102 + yhmatYtVhB + fW3AZxHf_c + 1FBXjDOK9a + 21OKfsPNf8h + 1T4SFvd94FA + 1KyRdCKVT35 + 1IJGmlRF3HI + 26D5hV0gTqu + 5FsRVgww4b + RB-1hJHjsI + 2H1yPNnaVS + fLk_vTAVwP2 + gnmBjz_euQE + eAab0vVm_d4 + 1PwhuhJlTFq + ilQu88KHf-J + BgNo7im9Fcf + UEqc2b6NTQ + hMpO160xhTi)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.205199] [00177C] audio processor updated noise suppression settings for input track 3
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.206183] [00177C] audio processor updated gate settings for input track 3
+[Debug | 6:59:52 PM | 4] [HAGS] Status for AMD Radeon RX 5600 OEM (37223): disabled (default disabled), driver support AlwaysOff, from D3DKMT/WDDM2.9
+[Debug | 6:59:52 PM | 8] 1 logs of- [HAGS] Status for AMD Radeon RX 5600 OEM (37223): disabled (default disabled), driver support AlwaysOff, from D3DKMT/WDDM2.9
+[Debug | 6:59:52 PM | 8] Unable to set increase base priority privilege (likely not available for this user)
+[Info | 6:59:52 PM | 8] SetGPUPriority Result: Success, Priority: 5
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273137] [00177C] starting pipeline
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273194] [00177C] started input capture
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273315] [00177C] starting FFMPEG audio encoder
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273361] [00177C] starting FFMPEG audio encoder
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273396] [00177C] starting FFMPEG audio encoder
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273436] [00177C] starting FFMPEG audio encoder
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273468] [00177C] starting FFMPEG audio encoder
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273534] [00177C] starting FFMPEG audio stream processor
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273601] [00177C] starting WASAPI capture for device Microfone (fifine Headset)
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273674] [00177C] starting WASAPI process capture for PID 7512
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273686] [00177C] starting WASAPI process capture for PID 2960
+[Info | 6:59:52 PM | 14] [Scope] [18:59:52.273696] [00177C] starting WASAPI process capture for PID 12448
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273714] [00177C] starting D2D video frame processor
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273733] [004174] entering FFMPEG audio encoder loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273735] [004174] regenerating FFMPEG audio encoder
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273804] [00177C] starting AMF video encoder
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273864] [004178] entering FFMPEG audio encoder loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.273866] [004178] regenerating FFMPEG audio encoder
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274052] [00417C] entering FFMPEG audio encoder loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274053] [00417C] regenerating FFMPEG audio encoder
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274192] [004184] entering FFMPEG audio encoder loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274194] [004184] regenerating FFMPEG audio encoder
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274805] [004180] entering FFMPEG audio encoder loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274807] [004180] regenerating FFMPEG audio encoder
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274936] [004188] audio stream processor: generating filter graph for 4 input streams -> 5 output streams
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.274946] [004188] audio stream processor: output[0] flags: 0x4
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.275135] [00418C] WASAPI capture for Microfone (fifine Headset) using WASAPI events
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.275591] [004194] entering D2D video processor main loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.275595] [004194] regenerating D2D video frame processor (iteration 1)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.276079] [004198] entering AMF video encoder main encode loop
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.283467] [00418C] entering WASAPI capture loop for capture device Microfone (fifine Headset)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.297744] [00177C] WinRT borderless support check: requested, allowed (4)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.300592] [004204] creating WinRT window capture for HWND 00000000000801AA
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.301427] [004188] audio stream processor: generated and configured filter graph
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.301452] [004188] audio stream processor: output stream 0 initial time base is 1/48000
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.301453] [004188] audio stream processor: output stream 1 initial time base is 1/48000
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.301455] [004188] audio stream processor: output stream 2 initial time base is 1/48000
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.301456] [004188] audio stream processor: output stream 3 initial time base is 1/48000
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.301457] [004188] audio stream processor: output stream 4 initial time base is 1/48000
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.322404] [004204] WinRT capture: set min update interval to 12.50ms (target interval 16.67ms)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.335458] [00418C] WASAPI device capture: using source timestamps for Microfone (fifine Headset) (time diff: 0.048336s)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.339123] [001C08] WinRT borderless support check: requested, allowed (4)
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.348449] [004204] disabled WinRT capture border
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.349501] [004204] starting WinRT window capture
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.349515] [004204] all pipeline components started
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.349566] [00177C] pipeline start issued
+[Info | 6:59:52 PM | 8] Recording session starting
+[Debug | 6:59:52 PM | 30] [TargetWindow] Required buffer for ICYMI detection type RealTime is 00:02:00
+[Debug | 6:59:52 PM | 30] [TargetWindow] Required buffer for user settings is 00:00:20
+[Debug | 6:59:52 PM | 30] [TargetWindow] Required buffer for ICYMI detection type RealTime is 00:02:00
+[Debug | 6:59:52 PM | 30] [TargetWindow] Required buffer for user settings is 00:00:20
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.361794] [004204] regenerating WinRT output texture pool, now 1920x1009 format 87
+[Debug | 6:59:52 PM | 18] [OpenVR] Initialize failed: OpenVR.Init failed: Init_PathRegistryNotFound
+[Debug | 6:59:52 PM | 30] [EventProcessor] [<-] ConfigChanged ElapsedTime: 178ms
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.416950] [004204] DXDeviceManager created DXDevice for adapter AMD Radeon RX 5600 OEM (LUID 37223) with usage 1
+[Debug | 6:59:52 PM | 14] [Scope] [18:59:52.417154] [004204] WinRT window capture detected window 0x801aa is now on monitor 0x10001 (\\.\DISPLAY1)
+[Info | 6:59:52 PM | 1] Initial scan complete
+[Info | 6:59:52 PM | 9] Updated blocklist from backend (1676 entries)
+[Warning | 6:59:52 PM | 17] GPUProc Failed to get instance names: O serviço não pode ser iniciado porque está desativado ou não tem dispositivos ativados associados
+[Info | 6:59:52 PM | 18] Recording session started successfully
+[Info | 6:59:52 PM | 18] [GameState] Contexts updated to [CATEGORY:1e2Ad6EOaE], resending game state to backend.
+[Info | 6:59:52 PM | 18] [GameState] Category 1e2Ad6EOaE recording=True.
+[Warning | 6:59:52 PM | 17] GPUProc Failed to get instance names: O serviço não pode ser iniciado porque está desativado ou não tem dispositivos ativados associados
+[Info | 6:59:52 PM | 1] Initial scan complete
+[Debug | 6:59:53 PM | 4] Hardware collection completed in 2422.126ms
+[Debug | 6:59:53 PM | 4] {"GPU":[{"Name":"AMD Radeon RX 5600 OEM","VideoProcessor":"AMD Radeon RX 5600 OEM","AdapterDACType":"Internal DAC(400MHz)","InstalledDisplayDrivers":"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0203303.inf_amd64_e5876a26758f154c\\B026363\\atidx9loader64.dll,C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0203303.inf_amd64_e5876a26758f154c\\B026363\\amdxx64.dll,C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0203303.inf_amd64_e5876a26758f154c\\B026363\\amdxx64.dll,C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0203303.inf_amd64_e5876a26758f154c\\B026363\\amdxc64.dll","AdapterRAM":"6.0 GB","AdapterRAMBytes":"6425673728","DriverVersion":"26.8.1","Vendor":"AMD"}],"HardDrives":[{"Name":"Drive C:\\","Drive type":"Fixed","Volume label":"","File system":"NTFS","Available space to current user":"319.8 GB","Total available space":"319.8 GB","Total size of drive":"446.0 GB","Root directory":"C:\\","MediaType":"SSD"}],"CPU":[{"Name":"AMD Ryzen 5 5500","DeviceID":"CPU0","Manufacturer":"AuthenticAMD","CurrentClockSpeed":"3600","Caption":"AMD64 Family 25 Model 80 Stepping 0","NumberOfCores":"6","NumberOfEnabledCore":"6","NumberOfLogicalProcessors":"12","Architecture":"x64","Family":"107","ProcessorType":"Central Processor","AddressWidth":"64","MaxClockSpeed":"3600 MHz","InstructionSet":"AVX2"}],"Memory":[{"Capacity":"8192","Manufacturer":"Team Group Inc","PartNumber":"TEAMGROUP-UD4-3200","Speed":"3200","MemoryType":"Unknown"},{"Capacity":"8192","Manufacturer":"Team Group Inc","PartNumber":"TEAMGROUP-UD4-3200","Speed":"3200","MemoryType":"Unknown"}],"OS":[{"Caption":"Microsoft Windows 11 Pro","WindowsDirectory":"C:\\WINDOWS","ProductType":"1","SystemDirectory":"C:\\WINDOWS\\system32","CountryCode":"55","CurrentTimeZone":"-180","Locale":"0416","EncryptionLevel":"256","OSArchitecture":"64 bits","OSLanguage":"1046","OSType":"18","Version":"10.0.26300.9711","HAGSEnabled":"False"}],"Monitors":[{"Name":"27M2N3200L","BitsPerPixel":"32","ScreenWidth":"1920","ScreenHeight":"1080","Primary":"True","AspectRatio":"16:9","Diagonal":"27"}],"Sound":[{"Name":"Dispositivo de High Definition Audio","ProductName":"Dispositivo de High Definition Audio","DeviceID":"HDAUDIO\\FUNC_01&VEN_10EC&DEV_0897&SUBSYS_104387FB&REV_1005\\5&30B510CE&0&0001","PowerManagementSupported":"False","Status":"OK","StatusInfo":"3"},{"Name":"AMD High Definition Audio Device","ProductName":"AMD High Definition Audio Device","DeviceID":"HDAUDIO\\FUNC_01&VEN_1002&DEV_AA01&SUBSYS_00AA0100&REV_1007\\7&A0C836&0&0001","PowerManagementSupported":"False","Status":"OK","StatusInfo":"3"},{"Name":"AMD Streaming Audio Device","ProductName":"AMD Streaming Audio Device","DeviceID":"ROOT\\AMDSAFD&FUN_01&REV_01\\0000","PowerManagementSupported":"False","Status":"OK","StatusInfo":"3"},{"Name":"Dispositivo de áudio USB","ProductName":"Dispositivo de áudio USB","DeviceID":"USB\\VID_3142&PID_0080&MI_00\\7&261CF848&0&0000","PowerManagementSupported":"False","Status":"OK","StatusInfo":"3"},{"Name":"AMD High Definition Audio Device","ProductName":"AMD High Definition Audio Device","DeviceID":"HDAUDIO\\FUNC_01&VEN_1002&DEV_AA01&SUBSYS_00AA0100&REV_1007\\5&16EAB55C&0&0001","PowerManagementSupported":"False","Status":"OK","StatusInfo":"3"}],"Motherboard":[{"Name":"Placa Base","Model":"null","Manufacturer":"ASUSTeK COMPUTER INC.","SlotLayout":"null","Product":"PRIME A520M-R"}],"Keyboard":[{"Name":"Dispositivo de Entrada USB"},{"Name":"Dispositivo de Entrada USB"},{"Name":"Dispositivo de teclado HID"},{"Name":"Dispositivo de Entrada USB"}],"Mouse":[{"Name":"Dispositivo de Entrada USB","Manufacturer":"(Dispositivos padrão do sistema)"},{"Name":"Dispositivo de Entrada USB","Manufacturer":"(Dispositivos padrão do sistema)"}],"Controllers":[],"Encoder":[{"Name":"GPU"}],"Battery":[{"Present":"False"}],"TobiiEyeTracker":[{"Present":"False"}]}
+[Debug | 6:59:54 PM | 14] [Scope] [18:59:54.377285] [004204] pipeline event fired: vcap.regen by vcap.WinRTWindowCapture[vcap]
+[Info | 6:59:58 PM | 18] Recording session target focus duration: 0s
+[Info | 7:00:01 PM | 26] [SDL Recorder] Initialized clock offset: sdl=10460451700ns steady=113147239358700ns readGap=66200ns
+[Info | 7:00:01 PM | 26] [SDL Recorder] Capture ENABLED (gameTarget=True, focused=True)
+[Info | 7:00:03 PM | 26] [SDL Recorder] Capture DISABLED (gameTarget=True, focused=False)
+[Info | 7:00:07 PM | 26] [SDL Recorder] Capture ENABLED (gameTarget=True, focused=True)
+[Info | 7:00:34 PM | 35] Input action detected: bookmark (trigger: Keyboard)
+[Info | 7:00:34 PM | 35] [ESM Event] - SaveBookmark
+[Debug | 7:00:34 PM | 30] [EventProcessor] [->] SaveBookmark
+[Info | 7:00:34 PM | 35] Input action detected: clip;length=20 (trigger: Keyboard)
+[Debug | 7:00:34 PM | 30] [EventProcessor] [<-] SaveBookmark ElapsedTime: 1ms
+[Info | 7:00:34 PM | 35] [ESM Event] - SaveClip
+[Debug | 7:00:34 PM | 30] [EventProcessor] [->] SaveClip
+[Info | 7:00:34 PM | 30] [RecordingState] Queueing manual clip ...
+[Debug | 7:00:34 PM | 30] [EventProcessor] [<-] SaveClip ElapsedTime: 9ms
+[Info | 7:00:34 PM | 19] Clip cooldown check: OK, last request 39.779s ago, now 19:00:34.972
+[Info | 7:00:34 PM | 19] [RecordingState] Triggering manual clip ...
+[Debug | 7:00:35 PM | 8] Duplicate Frame Avg FPS: 0, Max FPS: 0
+[Debug | 7:00:35 PM | 8] Skipped Frame FPS: 1
+[Info | 7:00:35 PM | 8] Preparing to generate clip: C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Info | 7:00:35 PM | 8] Buffer duration: 42.6
+[Info | 7:00:35 PM | 8] Input FPS: 64
+[Info | 7:00:35 PM | 8] Target Clip Length (in seconds): 20
+[Info | 7:00:35 PM | 8] Requested clip start timestamp: none
+[Debug | 7:00:35 PM | 8] Requesting clip export of the last 20.000s to C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054136] [00177C] exporting 1 video + 5 audio streams to "C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4" (20.400000s)
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054152] [00177C] created FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054210] [00177C] opening file C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054639] [00177C] opened file C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054665] [00177C] added video stream 0 () to FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054668] [00177C] added audio stream 0 (All Audio) to FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054669] [00177C] added audio stream 1 (RobloxPlayerBeta) to FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054671] [00177C] added audio stream 2 (MedalEncoder) to FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054673] [00177C] added audio stream 3 (Discord) to FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054674] [00177C] added audio stream 4 (Microphone) to FFMPEG muxer
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054683] [00177C] starting export from vbuf-639277739921889490 for data type C0D1F1EDC011A9E5, current buffer range 113138.207218 - 113180.840381 (42.633163s)
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054700] [00177C] creating exporter vbuf-639277739921889490/0 at 113180.903159 for data type C0D1F1EDC011A9E5 for period 113160.440381 + 20.400000s
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054710] [00177C] starting export from abuf0-639277739921889490 for data type 10ADAB1ECA55E77E, current buffer range 113138.128625 - 113180.773958 (42.645333s)
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054721] [00177C] creating exporter abuf0-639277739921889490/0 at 113180.903180 for data type 10ADAB1ECA55E77E for period 113160.373958 + 20.400000s
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054726] [00177C] starting export from abuf1-639277739921889490 for data type 10ADAB1ECA55E77E, current buffer range 113138.128625 - 113180.795292 (42.666667s)
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054732] [00177C] creating exporter abuf1-639277739921889490/0 at 113180.903191 for data type 10ADAB1ECA55E77E for period 113160.395292 + 20.400000s
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054735] [00177C] starting export from abuf2-639277739921889490 for data type 10ADAB1ECA55E77E, current buffer range 113138.128687 - 113180.795354 (42.666667s)
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054743] [00177C] creating exporter abuf2-639277739921889490/0 at 113180.903202 for data type 10ADAB1ECA55E77E for period 113160.395354 + 20.400000s
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054747] [00177C] starting export from abuf3-639277739921889490 for data type 10ADAB1ECA55E77E, current buffer range 113138.128750 - 113180.795417 (42.666667s)
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054754] [00177C] creating exporter abuf3-639277739921889490/0 at 113180.903213 for data type 10ADAB1ECA55E77E for period 113160.395417 + 20.400000s
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.054758] [00177C] starting export from abuf4-639277739921889490 for data type 10ADAB1ECA55E77E, current buffer range 113138.128833 - 113180.774167 (42.645333s)
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.054766] [00177C] creating exporter abuf4-639277739921889490/0 at 113180.903225 for data type 10ADAB1ECA55E77E for period 113160.374167 + 20.400000s
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.055810] [002A0C] muxer creating video stream with codec H.265
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.055843] [002A0C] muxer creating audio stream with codec AAC
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.056245] [002A0C] muxer creating audio stream with codec AAC
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.056488] [002A0C] muxer creating audio stream with codec AAC
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.056690] [002A0C] muxer creating audio stream with codec AAC
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.056850] [002A0C] muxer creating audio stream with codec AAC
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057043] [002A0C] muxer start: entering loop
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057111] [002A0C] muxer start: got keyframe from video stream 0 at time 113160.590462, now at 1/6 streams
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057268] [002A0C] muxer start: got keyframe from audio stream 0 at time 113160.379292, now at 2/6 streams
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057408] [002A0C] muxer start: got keyframe from audio stream 1 at time 113160.400625, now at 3/6 streams
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057453] [002A0C] muxer start: got keyframe from audio stream 2 at time 113160.400688, now at 4/6 streams
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057502] [002A0C] muxer start: got keyframe from audio stream 3 at time 113160.400750, now at 5/6 streams
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057547] [002A0C] muxer start: got keyframe from audio stream 4 at time 113160.379500, now at 6/6 streams
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057549] [002A0C] muxer start: using 113160.590462 as zero time
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057605] [002A0C] muxer setting MP4 faststart flag
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.057607] [002A0C] muxer writing file header
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.157192] [002A0C] muxer stop: flushing buffers
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.157393] [002A0C] muxer stop: writing trailer, last PTS 113180.840381
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.198959] [002A0C] muxer stop: exiting thread
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.199630] [00177C] waiting for pending async requests to complete for file C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.199634] [00177C] closing file C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.428279] [00177C] synced file data and metadata for C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Debug | 7:00:35 PM | 14] [Scope] [19:00:35.428530] [00177C] closed file C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428580] [00177C] destroying exporter abuf0-639277739921889490/0 for data type 10ADAB1ECA55E77E after 0.373851s
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428598] [00177C] destroying exporter abuf1-639277739921889490/0 for data type 10ADAB1ECA55E77E after 0.373868s
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428605] [00177C] destroying exporter abuf2-639277739921889490/0 for data type 10ADAB1ECA55E77E after 0.373865s
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428610] [00177C] destroying exporter abuf3-639277739921889490/0 for data type 10ADAB1ECA55E77E after 0.373861s
+[Debug | 7:00:35 PM | 8] Got 1064 events
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428616] [00177C] destroying exporter abuf4-639277739921889490/0 for data type 10ADAB1ECA55E77E after 0.373853s
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428622] [00177C] destroying exporter vbuf-639277739921889490/0 for data type C0D1F1EDC011A9E5 after 0.373935s
+[Info | 7:00:35 PM | 14] [Scope] [19:00:35.428659] [00177C] exported 1 video + 5 audio streams to "C:\Users\uliss\Videos\Medal\Clips\Roblox\MedalTVRoblox20261016190035044.mp4" (20.400000s) after 0.375s
+[Debug | 7:00:35 PM | 35] Foreground window: 000801AA, Roblox (class WINDOWSCLIENT) under process 12448, RobloxPlayerBeta
+[Debug | 7:00:35 PM | 8] Probe output: {
+    "streams": [
+        {
+            "index": 0,
+            "codec_name": "hevc",
+            "codec_long_name": "H.265 / HEVC (High Efficiency Video Coding)",
+            "profile": "Main",
+            "codec_type": "video",
+            "codec_tag_string": "hvc1",
+            "codec_tag": "0x31637668",
+            "width": 1936,
+            "height": 1048,
+            "coded_width": 1984,
+            "coded_height": 1056,
+            "closed_captions": 0,
+            "film_grain": 0,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "242:131",
+            "pix_fmt": "yuv420p",
+            "level": 123,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "chroma_location": "left",
+            "refs": 1,
+            "view_ids_available": "",
+            "view_pos_available": "",
+            "id": "0x1",
+            "r_frame_rate": "5000000/83333",
+            "avg_frame_rate": "310000000/5175193",
+            "time_base": "1/10000000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 201832527,
+            "duration": "20.183253",
+            "bit_rate": "17176042",
+            "nb_frames": "1209",
+            "extradata_size": 121,
+            "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "language": "und",
+                "handler_name": "VideoHandler",
+                "vendor_id": "[0][0][0][0]"
+            }
+        },
+        {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 96,
+            "start_time": "0.002000",
+            "duration_ts": 968704,
+            "duration": "20.181333",
+            "bit_rate": "192576",
+            "nb_frames": "946",
+            "extradata_size": 5,
+            "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "language": "und",
+                "handler_name": "SoundHandler",
+                "vendor_id": "[0][0][0][0]",
+                "title": "All Audio"
+            }
+        },
+        {
+            "index": 2,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x3",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 96,
+            "start_time": "0.002000",
+            "duration_ts": 968704,
+            "duration": "20.181333",
+            "bit_rate": "192686",
+            "nb_frames": "946",
+            "extradata_size": 5,
+            "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "language": "und",
+                "handler_name": "SoundHandler",
+                "vendor_id": "[0][0][0][0]",
+                "title": "RobloxPlayerBeta"
+            }
+        },
+        {
+            "index": 3,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x4",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 96,
+            "start_time": "0.002000",
+            "duration_ts": 968704,
+            "duration": "20.181333",
+            "bit_rate": "2270",
+            "nb_frames": "946",
+            "extradata_size": 5,
+            "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "language": "und",
+                "handler_name": "SoundHandler",
+                "vendor_id": "[0][0][0][0]",
+                "title": "MedalEncoder"
+            }
+        },
+        {
+            "index": 4,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x5",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 96,
+            "start_time": "0.002000",
+            "duration_ts": 968704,
+            "duration": "20.181333",
+            "bit_rate": "2270",
+            "nb_frames": "946",
+            "extradata_size": 5,
+            "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "language": "und",
+                "handler_name": "SoundHandler",
+                "vendor_id": "[0][0][0][0]",
+                "title": "Discord"
+            }
+        },
+        {
+            "index": 5,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x6",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 96,
+            "start_time": "0.002000",
+            "duration_ts": 968704,
+            "duration": "20.181333",
+            "bit_rate": "3323",
+            "nb_frames": "946",
+            "extradata_size": 5,
+            "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "language": "und",
+                "handler_name": "SoundHandler",
+                "vendor_id": "[0][0][0][0]",
+                "title": "Microphone"
+            }
+        }
+    ],
+    "format": {
+        "filename": "C:\\Users\\uliss\\Videos\\Medal\\Clips\\Roblox\\MedalTVRoblox20261016190035044.mp4",
+        "nb_streams": 6,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "20.183333",
+        "size": "44382162",
+        "bit_rate": "17591608",
+        "probe_score": 100,
+        "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2mp41",
+            "encoder": "Lavf61.7.100"
+        }
+    }
+}
+
+[Info | 7:00:36 PM | 8] Output FPS: 59.9011476480201
+[Info | 7:00:36 PM | 8] Output Video Bitrate (Mbps) : 17.176042
+[Info | 7:00:36 PM | 8] Output Video Length (in seconds): 20.183253
+[Info | 7:00:36 PM | 8] [SDL Recorder] HasEventsInRange: clipRange=[113160590461900, 113180840380800] bufferRange=[0, 0] count=0 overlap=False
+[Info | 7:00:36 PM | 26] [SDL Recorder] Capture DISABLED (gameTarget=True, focused=False)
+[Info | 7:00:38 PM | 38] ClipSaved request successful - UUID: 39942f51-5feb-41f6-b4a5-5c8caf905801, ContentId: nJTZ2mRKrixWDgzOB
+[Info | 7:00:38 PM | 34] [SensitivityConfig] GetGameMouseSensitivity CALLED!
+[Info | 7:00:38 PM | 34] [SensitivityConfig] Category ID: 1e2Ad6EOaE
+[Info | 7:00:38 PM | 34] [SensitivityConfig] No match for category ID: 1e2Ad6EOaE
+[Info | 7:00:38 PM | 34] jsonl header: {"Version":"3.1","CategoryID":"1e2Ad6EOaE","InputFPS":64.0,"OutputFPS":59.901145935058594,"TargetFPS":60.0,"InputResMouse":{"Width":1920,"Height":1009},"InputResVideo":{"Width":1920,"Height":1009},"OutputRes":{"Width":1936,"Height":1048},"ShowCursor":false,"ShowWebcam":false,"CaptureType":"WindowCapture/WinRT","AspectRatio":"Custom","KeyboardLayout":"pt-BR","KeyboardLayoutFamily":"QWERTY","KeyboardLayoutId":"00000416","DefaultMappingsVersion":null,"CustomMappingsSupported":false,"MouseSpeed":13,"MouseAcceleration":true,"MouseThreshold1":6,"MouseThreshold2":10,"StartTimestamp":1792188014741272,"ActionMappingsSource":"parser"}
+[Info | 7:00:38 PM | 35] Total events: 285
+[Info | 7:00:38 PM | 35] Redacted events: 0
+[Info | 7:00:38 PM | 35] Total actions: 573
+[Info | 7:00:38 PM | 35] Untracked actions: 285
+[Info | 7:00:38 PM | 35] Recoverable untracked actions: 0
+[Info | 7:00:52 PM | 26] [SDL Recorder] Capture ENABLED (gameTarget=True, focused=True)
+[Info | 7:00:52 PM | 26] [SDL Recorder] Capture DISABLED (gameTarget=True, focused=False)
+[Info | 7:01:08 PM | 26] [SDL Recorder] Capture ENABLED (gameTarget=True, focused=True)
+[Info | 7:01:31 PM | 26] [SDL Recorder] Capture DISABLED (gameTarget=True, focused=False)
+[Info | 7:02:18 PM | 34] Recorder shutdown started
+[Info | 7:02:18 PM | 34] [GameState] Timer stopped
+[Info | 7:02:18 PM | 34] [ESM Event] - Shutdown
+[Debug | 7:02:18 PM | 30] [EventProcessor] [->] Shutdown
+[Info | 7:02:18 PM | 30] Exiting Recording
+[Info | 7:02:18 PM | 30] Dispose Recording Session
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.141156] [004124] stopping pipeline
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.141483] [004204] stopping WinRT window capture
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.146691] [004204] stopped WinRT window capture
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.147390] [004124] stopping AMF video encoder (put thread)
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.147393] [004124] stopping AMF video encoder (encode thread)
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.147430] [004198] AMF video encoder timed out waiting for next state while draining, stopping
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.147432] [004198] exiting AMF video encoder main encode loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.154391] [004124] stopping D2D video frame processor
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.154935] [004194] exiting D2D video processor main loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.155861] [004124] stopped D2D video frame processor
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.155882] [004124] stopping WASAPI process capture for PID 12448
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.156787] [004124] stopped WASAPI process capture for PID 12448
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.156808] [004124] stopping WASAPI process capture for PID 2960
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.158028] [004124] stopped WASAPI process capture for PID 2960
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.158058] [004124] stopping WASAPI process capture for PID 7512
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.158468] [004124] stopped WASAPI process capture for PID 7512
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.158489] [004124] stopping WASAPI capture for device Microfone (fifine Headset)
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.158500] [00418C] exiting WASAPI capture loop for device Microfone (fifine Headset)
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.159443] [004124] stopped WASAPI capture for device Microfone (fifine Headset)
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.159452] [004124] stopping FFMPEG audio stream processor
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.160298] [004124] stopped FFMPEG audio stream processor
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.160303] [004124] stopping FFMPEG audio encoder
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.162207] [004184] exiting FFMPEG audio encoder loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.165783] [004184] leaving FFMPEG audio encoder run thread
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.166318] [004124] stopped FFMPEG audio encoder
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.166327] [004124] stopping FFMPEG audio encoder
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.259994] [004180] exiting FFMPEG audio encoder loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.263947] [004180] leaving FFMPEG audio encoder run thread
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.264328] [004124] stopped FFMPEG audio encoder
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.264334] [004124] stopping FFMPEG audio encoder
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.360394] [00417C] exiting FFMPEG audio encoder loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.360704] [00417C] leaving FFMPEG audio encoder run thread
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.361264] [004124] stopped FFMPEG audio encoder
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.361274] [004124] stopping FFMPEG audio encoder
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.460408] [004178] exiting FFMPEG audio encoder loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.460712] [004178] leaving FFMPEG audio encoder run thread
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.461402] [004124] stopped FFMPEG audio encoder
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.461450] [004124] stopping FFMPEG audio encoder
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.461462] [004174] exiting FFMPEG audio encoder loop
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.461716] [004174] leaving FFMPEG audio encoder run thread
+[Info | 7:02:18 PM | 14] [Scope] [19:02:18.462084] [004124] stopped FFMPEG audio encoder
+[Info | 7:02:18 PM | 30] Stopped Pipeline
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.462110] [004124] stopping input capture
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.462113] [004124] all pipeline components stopped
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.462118] [004124] stopped input capture
+[Info | 7:02:18 PM | 30] Recording session stopped
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.462119] [004124] pipeline stop issued
+[Info | 7:02:18 PM | 30] [GameState] Contexts updated to [CATEGORY:1e2Ad6EOaE], resending game state to backend.
+[Info | 7:02:18 PM | 30] [GameState] Category 1e2Ad6EOaE recording=False.
+[Info | 7:02:18 PM | 30] Stopping performance monitor.
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.470716] [004124] stopping pipeline
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.470788] [004124] pipeline stop issued
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.470791] [004124] pipeline joining user action thread
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.470802] [004128] pipeline stopping processing user actions
+[Debug | 7:02:18 PM | 14] [Scope] [19:02:18.471201] [004124] pipeline joined user action thread
+[Info | 7:02:18 PM | 30] Disposed Pipeline
+[Info | 7:02:18 PM | 30] Event queue health check has stopped.
+[Info | 7:02:18 PM | 34] State machine has stopped
+[Debug | 7:02:18 PM | 30] [EventProcessor] [<-] Shutdown ElapsedTime: 376ms
+[Info | 7:02:18 PM | 30] Event queue processing has stopped.
